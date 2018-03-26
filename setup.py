@@ -5,7 +5,7 @@ from divio_docs_theme import __version__
 
 
 setup(
-    name='divio_docs_theme',
+    name='divio-docs-theme',
     version=__version__,
     url='https://github.com/divio/divio-docs-theme/',
     license='MIT',
