@@ -185,12 +185,20 @@
 
   <script type="text/javascript">
       jQuery(function () {
-          {% if theme_sticky_navigation|tobool %}
-          SphinxRtdTheme.Navigation.enableSticky();
-          {% else %}
-          SphinxRtdTheme.Navigation.enable();
-          {% endif %}
-      });
+        {% if theme_sticky_navigation|tobool %}
+            try {
+                SphinxRtdTheme.Navigation.enableSticky();
+            } catch () {
+                SphinxRtdTheme.StickyNav.enableSticky();
+            }
+        {% else %}
+            try {
+                SphinxRtdTheme.Navigation.enable();
+            } catch () {
+                SphinxRtdTheme.StickyNav.enable();
+            }
+        {% endif %}
+    });
   </script>
 
   {%- block footer %} {% endblock %}
