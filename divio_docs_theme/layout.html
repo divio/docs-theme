@@ -185,19 +185,11 @@
 
   <script type="text/javascript">
       jQuery(function () {
-        {% if theme_sticky_navigation|tobool %}
-            try {
-                SphinxRtdTheme.Navigation.enableSticky();
-            } catch (e) {
-                SphinxRtdTheme.StickyNav.enableSticky();
-            }
-        {% else %}
-            try {
-                SphinxRtdTheme.Navigation.enable();
-            } catch (e) {
-                SphinxRtdTheme.StickyNav.enable();
-            }
-        {% endif %}
+        try {
+            SphinxRtdTheme.Navigation.enableSticky();
+        } catch (e) {
+            SphinxRtdTheme.StickyNav.enable();
+        }
     });
   </script>
 
