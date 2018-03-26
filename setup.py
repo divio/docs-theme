@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from io import open
 from setuptools import setup
-from sphinx_rtd_theme import __version__
+from divio_docs_theme import __version__
 
 
 setup(
