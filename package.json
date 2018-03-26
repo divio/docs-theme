@@ -1,0 +1,27 @@
+{
+  "name": "divio-cloud-docs",
+  "version": "1.0.0",
+  "description": "This documentation is intended for developers using the Divio Cloud.",
+  "main": "index.js",
+  "scripts": {
+    "css": "node-sass-chokidar ./_static/sass/ -o ./_static/css/ && postcss -r ./_static/css/divio.css",
+    "watch-css": "node-sass-chokidar ./_static/sass/ -o ./_static/css/ --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divio/divio-cloud-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/divio/divio-cloud-docs/issues"
+  },
+  "homepage": "https://github.com/divio/divio-cloud-docs#readme",
+  "dependencies": {
+    "autoprefixer": "^8.2.0",
+    "cssnano": "^3.10.0",
+    "node-sass-chokidar": "^1.2.0",
+    "postcss-cli": "^5.0.0"
+  }
+}
