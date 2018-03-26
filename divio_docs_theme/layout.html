@@ -188,13 +188,13 @@
         {% if theme_sticky_navigation|tobool %}
             try {
                 SphinxRtdTheme.Navigation.enableSticky();
-            } catch () {
+            } catch (e) {
                 SphinxRtdTheme.StickyNav.enableSticky();
             }
         {% else %}
             try {
                 SphinxRtdTheme.Navigation.enable();
-            } catch () {
+            } catch (e) {
                 SphinxRtdTheme.StickyNav.enable();
             }
         {% endif %}
