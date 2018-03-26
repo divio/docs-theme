@@ -1,0 +1,13 @@
+include *.txt
+include LICENSE
+recursive-include divio_docs_theme *.conf
+recursive-include divio_docs_theme *.css
+recursive-include divio_docs_theme *.eot
+recursive-include divio_docs_theme *.html
+recursive-include divio_docs_theme *.js
+recursive-include divio_docs_theme *.svg
+recursive-include divio_docs_theme *.ttf
+recursive-include divio_docs_theme *.woff
+recursive-include divio_docs_theme *.woff2
+recursive-include divio_docs_theme *.ico
+recursive-include divio_docs_theme *.png
