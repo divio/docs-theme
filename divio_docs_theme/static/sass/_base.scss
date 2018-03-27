@@ -5292,7 +5292,7 @@ div[class^='highlight'] pre {
 
 .wy-menu-vertical li.current a {
     color: gray;
-    padding: 0.4045em 20px 0.4045em 56px;
+    padding: 0.4045em 20px 0.4045em 50px;
 }
 
 .wy-menu-vertical li.current a:hover {
@@ -5353,14 +5353,14 @@ div[class^='highlight'] pre {
 }
 
 .wy-menu-vertical li.toctree-l2.current > a {
-    padding: 0.4045em 20px 0.4045em 36px + 20px;
+    padding: 0.4045em 20px 0.4045em 32px + 20px;
     font-size: 14px;
 }
 
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
     display: block;
     // background: #c9c9c9;
-    padding: 0.4045em 20px 0.4045em 36px + 40px;
+    padding: 0.4045em 20px 0.4045em 32px + 40px;
 }
 
 .wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand {
@@ -5386,13 +5386,13 @@ div[class^='highlight'] pre {
 
 .wy-menu-vertical li.toctree-l3.current > a {
     // background: #bdbdbd;
-    padding: 0.4045em 20px 0.4045em 36px + 40px;
+    padding: 0.4045em 20px 0.4045em 32px + 40px;
 }
 
 .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
     display: block;
     // background: #bdbdbd;
-    padding: 0.4045em 20px 0.4045em 36px + 60px;
+    padding: 0.4045em 20px 0.4045em 32px + 60px;
     border-top: none;
     border-bottom: none;
 }
