@@ -176,3 +176,68 @@ footer > hr {
         position: relative;
     }
 }
+
+.divio-cloud {
+    margin: 20px 20px 10px;
+    border: 1px solid #E0E0E0;
+    background: white;
+    border-radius: 5px;
+    padding: 20px 16px;
+    @media (max-width: $screen-sm-min - 1) {
+        display: none;
+    }
+}
+
+.divio-cloud-caption {
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 16px;
+    margin-bottom: 16px;
+    color: rgba(black, 0.5);
+    display: block;
+}
+.divio-cloud-heading {
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 26px;
+    padding-right: 10px;
+    margin-bottom: 18px;
+}
+
+.divio-cloud-features {
+    padding-left: 15px;
+}
+.divio-cloud-features li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+}
+
+.divio-cloud-features li:before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: #0bf;
+    border-radius: 7px;
+    display: block;
+    position: absolute;
+    left: -14px;
+    top: 5px;
+}
+.divio-cloud-btn {
+    display: block;
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+    color: white;
+    background: #0bf;
+    padding: 0 !important;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 14px;
+
+    &:visited {
+        background-color: #0bf !important;
+    }
+}
