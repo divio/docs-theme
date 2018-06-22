@@ -204,6 +204,20 @@
             SphinxRtdTheme.StickyNav.enable();
         }
     });
+
+    jQuery(function ($) {
+        var adjustAnchor = function() {
+            var $anchor = $(':target');
+            var fixedElementHeight = 80;
+
+            if ($anchor.length > 0) {
+                $('html, body').scrollTop($anchor.offset().top - fixedElementHeight);
+            }
+        };
+
+        adjustAnchor();
+        $(window).on('hashchange load', adjustAnchor);
+    });
   </script>
 
   {%- block footer %} {% endblock %}

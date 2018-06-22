@@ -166,18 +166,6 @@ footer > hr {
     }
 }
 
-[id] {
-    &:before {
-        visibility: hidden;
-        content: '';
-        display: block;
-        height: 80px;
-        margin-top: -80px;
-        z-index: -1;
-        position: relative;
-    }
-}
-
 .divio-cloud {
     margin: 20px 20px 10px;
     border: 1px solid #E0E0E0;
