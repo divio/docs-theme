@@ -211,7 +211,9 @@
             var fixedElementHeight = 80;
 
             if ($anchor.length > 0) {
-                $('html, body').scrollTop($anchor.offset().top - fixedElementHeight);
+                setTimeout(function () {
+                    $('html, body').scrollTop($anchor.offset().top - fixedElementHeight);
+                });
             }
         };
 
