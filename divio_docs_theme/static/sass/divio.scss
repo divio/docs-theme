@@ -242,3 +242,7 @@ footer > hr {
         background-color: #0bf !important;
     }
 }
+
+.wy-menu.wy-menu-vertical ~ div {
+    display: none !important;
+}
