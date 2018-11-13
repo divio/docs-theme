@@ -1,6 +1,6 @@
 from os import path
 
-__version__ = '0.0.14'
+__version__ = '0.0.15'
 __version_full__ = __version__
 
 

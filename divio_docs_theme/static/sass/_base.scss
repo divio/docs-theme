@@ -5838,6 +5838,8 @@ footer span.commit code, footer span.commit .rst-content tt, .rst-content footer
     color: black;
     *zoom: 1;
     justify-content: space-between;
+    z-index: 999;
+    position: relative;
 
     .fa {
         font-size: 12px;
@@ -5864,10 +5866,25 @@ footer span.commit code, footer span.commit .rst-content tt, .rst-content footer
 
 .rst-versions .rst-other-versions {
     font-size: 14px;
-    padding: 0 20px 20px;
     color: gray;
     display: none;
     font: 0/0 a;
+    padding: 0 !important;
+
+    // .rst-current-version {
+    //     font-family: "Nunito", sans-serif;
+    //     font-size: 14px;
+    //     line-height: 20px;
+    // }
+
+    .rst-other-versions {
+        padding: 20px !important;
+        margin-bottom: 40px;
+    }
+
+    .rst-current-version {
+        display: none !important;
+    }
 
     dl {
         font-family: "Nunito", sans-serif;
@@ -5898,43 +5915,6 @@ footer span.commit code, footer span.commit .rst-content tt, .rst-content footer
     color: black;
 }
 
-.rst-versions.rst-badge {
-    width: auto;
-    bottom: 20px;
-    right: 20px;
-    left: auto;
-    border: none;
-    max-width: 300px;
-}
-
-.rst-versions.rst-badge .icon-book {
-    float: none;
-}
-
-.rst-versions.rst-badge .fa-book, .rst-versions.rst-badge .icon-book {
-    float: none;
-}
-
-.rst-versions.rst-badge.shift-up .rst-current-version {
-    text-align: right;
-}
-
-.rst-versions.rst-badge.shift-up .rst-current-version .fa-book, .rst-versions.rst-badge.shift-up .rst-current-version .icon-book {
-    float: left;
-}
-
-.rst-versions.rst-badge.shift-up .rst-current-version .icon-book {
-    float: left;
-}
-
-.rst-versions.rst-badge .rst-current-version {
-    width: auto;
-    height: 30px;
-    line-height: 30px;
-    padding: 0 6px;
-    display: block;
-    text-align: center;
-}
 
 @media screen and (max-width: 768px) {
     .rst-versions {
