@@ -234,3 +234,13 @@ footer > hr {
 .wy-menu.wy-menu-vertical ~ div {
     display: none !important;
 }
+
+.rst-content {
+    h1, h2, h3, h4, h5, h6 {
+        code {
+            border: none;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+}
