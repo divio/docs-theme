@@ -268,7 +268,7 @@ footer > hr {
 }
 
 .tabs__link--active {
-  color: #0bf;
+  color: #0bf !important;
   font-weight: bold;
   border-bottom: 2px solid #0bf !important;
   &:hover,

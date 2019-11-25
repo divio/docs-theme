@@ -5090,7 +5090,7 @@ footer > hr {
     color: black !important; }
 
 .tabs__link--active {
-  color: #0bf;
+  color: #0bf !important;
   font-weight: bold;
   border-bottom: 2px solid #0bf !important; }
   .tabs__link--active:hover, .tabs__link--active:visited, .tabs__link--active:active {
