@@ -249,7 +249,8 @@
               var index = 0;
 
               if (window.location.hash) {
-                  var maybeLink = $('[href="' + window.location.hash + ']');
+                  var maybeLink = $('.tabs__link[href="' + window.location.hash + '"]');
+
                   if (maybeLink.length && links.index(maybeLink) !== -1) {
                       index = links.index(maybeLink);
                   }
