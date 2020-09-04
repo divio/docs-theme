@@ -5101,3 +5101,16 @@ footer > hr {
 
 .tabs-pane {
   display: none; }
+
+.rst-content .sidebar {
+  background: #f5f7f9;
+}
+
+.rst-content .sidebar .sidebar-title {
+  background: #057eb6;
+  color: #fff;
+}
+
+.rst-content .sidebar .sidebar-subtitle {
+  font-weight: bold;
+}
