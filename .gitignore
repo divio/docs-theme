@@ -1,0 +1,12 @@
+# npm stuff
+node_modules
+
+# Python stuff
+.nox
+/build
+/dist
+__pycache__
+
+# Generated files
+src/*/theme/static/scripts
+src/*/theme/static/styles

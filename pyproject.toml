@@ -1,0 +1,39 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "furo"
+author = "Pradyun Gedam"
+author-email = "mail@pradyunsg.me"
+home-page = "https://github.com/pradyunsg/furo"
+description-file = "README.md"
+requires-python = ">=3.5"
+requires = [
+  "beautifulsoup4",
+  "sphinx",
+]
+
+[tool.flit.metadata.requires-extra]
+test = [
+  "pytest",
+  "pytest-cov",
+  "pytest-xdist",
+]
+doc = ["myst-parser", "sphinx-inline-tabs"]
+
+[tool.flit.entrypoints]
+"sphinx.html_themes" = {furo = "furo"}
+
+[tool.flit.sdist]
+include = [
+  # Generated assets
+  "src/furo/theme/static/*/*",
+]
+exclude = [
+  "docs/", "src/furo/assets",
+  # JS stuff
+  "gulpfile.js", "package.json", "package-lock.json",
+  # Linting stuff
+  ".flake8", ".isort.cfg", ".pre-commit-config.yaml",
+]
