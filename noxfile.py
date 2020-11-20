@@ -35,7 +35,7 @@ def docs_live(session):
         docs_dir = session.posargs[0]
         additional_dependencies = session.posargs[1:]
     else:
-        docs_dir = "docs/"
+        docs_dir = "docs-divio/"
         additional_dependencies = ()
 
     build_command = "./node_modules/.bin/gulp build"
@@ -67,7 +67,7 @@ def docs(session):
     _install_this_project_with_flit(session, extras=["doc"], editable=False)
 
     # Generate documentation into `build/docs`
-    session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
+    session.run("sphinx-build", "-b", "dirhtml", "-v", "docs-divio/", "build/docs")
 
 
 @nox.session(python="3.8", reuse_venv=True)

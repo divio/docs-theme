@@ -1,0 +1,3 @@
+[submodule "docs-divio"]
+	path = docs-divio
+	url = https://github.com/divio/divio-cloud-docs

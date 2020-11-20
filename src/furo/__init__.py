@@ -38,14 +38,10 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     # Inject information about styles
     context["furo_pygments"] = {
         "light": _get_colors_for_codeblocks(
-            app.builder.highlighter,
-            fg="black",
-            bg="white",
+            app.builder.highlighter, fg="black", bg="white",
         ),
         "dark": _get_colors_for_codeblocks(
-            app.builder.dark_highlighter,
-            fg="white",
-            bg="black",
+            app.builder.dark_highlighter, fg="white", bg="black",
         ),
     }
 

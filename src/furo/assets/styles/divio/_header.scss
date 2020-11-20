@@ -1,0 +1,151 @@
+@import "./_variables";
+
+.divio-header {
+  position: relative;
+  z-index: 101;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.divio-header__inner {
+  box-sizing: border-box;
+  min-height: $header-height + 2 * 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  width: 100%;
+  position: relative;
+  z-index: 200;
+
+  @media (min-width: 1440px) {
+    width: 1440px;
+  }
+
+  @media (min-width: 992px) {
+    height: 80px;
+    padding: 30px 50px;
+  }
+
+  @media (max-width: 460px) {
+    min-height: auto;
+  }
+}
+
+.divio-header__logo {
+  position: relative;
+  z-index: 201;
+  flex-shrink: 0;
+  margin-top: 5px;
+
+  > a {
+    color: $color-secondary;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-secondary-hover;
+    }
+  }
+
+  @media (max-width: 460px) {
+    margin: 0 auto;
+  }
+}
+
+.divio-header__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  min-height: 40px;
+  padding: 0;
+  left: 0;
+  right: 0;
+
+  @media (min-width: 992px) {
+    position: absolute;
+    top: 50%;
+    margin: -20px 315px 0;
+  }
+
+  @media (max-width: 860px) {
+    display: none;
+  }
+}
+
+.divio-header__nav-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+}
+
+.divio-header__nav-anchor {
+  white-space: nowrap;
+  color: $body-color;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-sm;
+  transition: $transition;
+  text-decoration: none;
+  padding: 0 14px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-primary;
+    text-decoration: none;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0 20px;
+  }
+}
+
+.divio-header__meta {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  align-items: center;
+
+  .divio-header__nav-anchor {
+    padding: 0;
+  }
+
+  .divio-header__nav-item + .divio-header__nav-item {
+    margin-left: 28px;
+  }
+
+  @media (max-width: 460px) {
+    display: none;
+  }
+}
+
+.divio-header__nav-button {
+  display: inline-block;
+  white-space: nowrap;
+  color: $body-color;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  transition: all 0.1s ease-in-out;
+
+  border-radius: 40px;
+  border: 1px solid $body-color;
+  padding: 8px 20px !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: white;
+    background-color: $body-color;
+  }
+}

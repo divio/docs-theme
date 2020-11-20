@@ -1,47 +1,22 @@
-<h1 align="center">Furo</h1>
-<p align="center">
-  A clean customizable theme for <a href="https://www.sphinx-doc.org/">Sphinx</a>.
-</p>
-<a href="https://pradyunsg.me/furo/">
-  <img align="center" src="https://github.com/pradyunsg/furo/raw/master/docs/_static/demo.png" alt="Demo image">
-</a>
+# Divio Documentation Theme
 
-## Quickstart
+This project is based on the [furo](https://github.com/pradyunsg/furo) theme.
 
-Furo can be installed using `pip`:
+## Installation
 
-```
-pip install furo
-```
+Make sure you have a **virtual environment activated**.
 
-Update the `html_theme` in `conf.py`:
+- `nvm use 14`
+- `npm install`
+- `pip install nox`
+- `git submodule update --init --recursive`
 
-```py
-html_theme = "furo"
-```
+## Usage
 
-Your Sphinx documentation will now be generated with this theme! For more information, visit [Furo's documentation][docs].
+Make sure you have a **virtual environment activated**.
 
-[docs]: https://pradyunsg.me/furo/
-
-## Contributing
-
-Furo is a volunteer maintained open source project, and we welcome contributions of all forms. Please take a look at our [Contributing Guide](https://pradyunsg.me/furo/contributing/) for more information.
-
-## Acknowledgements
-
-Furo is inspired by (and borrows elements from) some excellent technical documentation themes:
-
-- [mkdocs-material] for MkDocs
-- [Just the Docs] for Jekyll
-- [GitBook]
-
-We use [BrowserStack] to test on real devices and browsers. Shoutout to them for supporting OSS projects!
-
-[mkdocs-material]: https://squidfunk.github.io/mkdocs-material/
-[just the docs]: https://pmarsceill.github.io/just-the-docs/
-[gitbook]: https://www.gitbook.com/
-[browserstack]: https://browserstack.com/
+- `nox -s lint` to run linting
+- `nox -s docs-live` to start the local development server
 
 ## License
 
