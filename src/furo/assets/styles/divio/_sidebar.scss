@@ -1,0 +1,32 @@
+@import "./_variables";
+
+.sidebar-brand {
+  display: none;
+}
+
+.sidebar-search-container {
+  margin-top: $content-space;
+}
+
+.sidebar-tree {
+  padding: 0 0 10px;
+
+  .toctree-l1 > .reference {
+    @extend .link-style;
+  }
+
+  .toctree-l1 > label .icon {
+    color: black;
+  }
+}
+
+// search
+.sidebar-search-container {
+  background: white;
+}
+
+.sidebar-search {
+  border: 1px solid #E6ECF1;
+  border-right: 0;
+  border-radius: 2px 0 0 2px;
+}

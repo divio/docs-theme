@@ -1,0 +1,5 @@
+@import "./_variables";
+
+.related-information a {
+  @extend .link-style;
+}

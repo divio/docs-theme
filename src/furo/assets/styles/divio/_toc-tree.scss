@@ -1,0 +1,60 @@
+@import "./_variables";
+
+$toc-tree-link-distance: 20px;
+
+.toc-drawer {
+  z-index: 101;
+
+  @media (min-width: 1313px) {
+    background: transparent;
+  }
+}
+
+.toc-tree {
+  margin-top: $content-space;
+  padding-top: 0;
+  padding-left: 0;
+
+  > ul,
+  > li {
+    padding-left: 0;
+  }
+
+  ul ul li {
+    padding-top: 0;
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+  }
+
+  ul ul a {
+    display: block;
+    padding: 5px 0 5px $toc-tree-link-distance;
+  }
+
+  .scroll-current {
+    border-left: 2px solid $color-primary;
+  }
+}
+
+.toc-title-container {
+  padding-top: 4px;
+}
+
+.toc-title {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transform: translatey(-4px);
+  padding-left: 5px;
+}
+
+.toc-tree-icon {
+  width: 15px;
+  height: 15px;
+  padding-left: $toc-tree-link-distance;
+
+  color: $gray;
+}
