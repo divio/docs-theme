@@ -1,0 +1,34 @@
+// Permalinks
+//    Adapted from Sphinx-RTD-theme's corresponding CSS
+//    https://github.com/readthedocs/sphinx_rtd_theme/blob/1a32899b/src/sass/_theme_rst.sass#L201
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl dt,
+p.caption,
+table > caption,
+.code-block-caption {
+  > .headerlink {
+    font-weight: 100;
+    margin-left: 0.5rem;
+    visibility: hidden;
+  }
+  &:hover > .headerlink {
+    // display: inline-block;
+    visibility: visible;
+    // font-size: inherit;
+    // line-height: 1;
+    color: var(--color-background-border);
+
+    // &:after {
+    //   visibility: visible;
+    //   content: "¶";
+    //   // font-family: FontAwesome;
+    //   display: inline-block;
+    //   margin-left: -20px;
+    // }
+  }
+}

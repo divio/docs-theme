@@ -4,9 +4,10 @@
 //
 // These are set here, since CSS variables can't be used in media queries,
 // which is where these would be used.
-$content-padding: 3em;
+$content-spacing: 40px;
+$content-padding: 5em;
 $content-padding--small: 1em;
-$content-width: 46em;
+$content-width: 44em;
 $sidebar-width: 15em;
 $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 
@@ -15,7 +16,7 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 // Structure of these: (color, key-in-$icons).
 // The colors are translated into CSS variables below, and icons are used for
 // the declarations.
-$admonition-default: #651fff "abstract";
+$admonition-default: #00bbff "abstract";
 $admonitions: (
   // Each of these has an reST directives for it.
   "caution": #ff9100 "spark",
@@ -25,8 +26,8 @@ $admonitions: (
   "error": #ff5252 "failure",
   "hint": #00c852 "question",
   "important": #00bfa5 "flame",
-  "note": #00b0ff "pencil",
-  "seealso": #448aff "info",
+  "note": #00bbff "pencil",
+  "seealso": #00bbff "info",
   "tip": #00c852 "info",
   "admonition-todo": #808080 "pencil"
 );
@@ -37,8 +38,10 @@ $admonitions: (
   //////////////////////////////////////////////////////////////////////////////
   // These are adapted from https://systemfontstack.com/
   --font-stack: Nunito, sans-serif;
-  --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, Monaco,
-    Liberation Mono, Lucida Console, monospace;
+  --font-stack--monospace: "Operator mono", "Hack", "Menlo", Consolas,
+    "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono",
+    "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 
   --font-size--normal: 100%;
   --font-size--small: 87.5%;
@@ -113,7 +116,7 @@ $admonitions: (
   --color-problematic: #cc0000;
 
   // Base Colors
-  --color-foreground-primary: black; // for main text and headings
+  --color-foreground-primary: #1a406b; // for main text and headings
   --color-foreground-secondary: #5a5c63; // for secondary text
   --color-foreground-muted: #72747e; // for muted text
   --color-foreground-border: #878787; // for content borders
@@ -129,8 +132,8 @@ $admonitions: (
   --color-announcement-text: #eeebee;
 
   // Brand colors
-  --color-brand-primary: #2962ff;
-  --color-brand-content: #2a5adf;
+  --color-brand-primary: #00bbff;
+  --color-brand-content: #00bbff;
 
   // API documentation
   --color-api-overall: var(--color-foreground-muted);
@@ -174,8 +177,8 @@ $admonitions: (
 
   --color-sidebar-brand-text: var(--color-foreground-primary);
   --color-sidebar-caption-text: var(--color-foreground-muted);
-  --color-sidebar-link-text: var(--color-foreground-secondary);
-  --color-sidebar-link-text--top-level: var(--color-brand-primary);
+  --color-sidebar-link-text: var(--color-foreground-primary);
+  --color-sidebar-link-text--top-level: var(--color-foreground-primary);
 
   --color-sidebar-item-background: var(--color-sidebar-background);
   --color-sidebar-item-background--current: var(
@@ -204,14 +207,14 @@ $admonitions: (
   --color-toc-title-text: var(--color-foreground-muted);
   --color-toc-item-text: var(--color-foreground-secondary);
   --color-toc-item-text--hover: var(--color-foreground-primary);
-  --color-toc-item-text--active: var(--color-brand-primary);
+  --color-toc-item-text--active: var(--color-foreground-primary);
 
   // Actual page contents
   --color-content-foreground: var(--color-foreground-primary);
   --color-content-background: transparent;
 
-  --color-link: var(--color-brand-content);
-  --color-link--hover: var(--color-brand-content);
+  --color-link: var(--color-brand-primary);
+  --color-link--hover: #0083b3;
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
 }
@@ -237,8 +240,8 @@ $admonitions: (
     --color-announcement-text: #eeebee;
 
     // Brand colors
-    --color-brand-primary: #2b8cee;
-    --color-brand-content: #368ce2;
+    --color-brand-primary: #00bbff;
+    --color-brand-content: #00bbff;
 
     // Highlighted text (search)
     --color-highlighted-background: #083563;

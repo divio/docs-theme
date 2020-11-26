@@ -36,6 +36,7 @@
   </aside>
   <main class="main">
     <div class="content">
+      {% include "divio/breadcrumbs.html" %}
       <article role="main">
         <label class="toc-overlay-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
@@ -74,10 +75,40 @@
         </div>
 
         <div class="related-information">
-          <span class="copyright">{{ _("Copyright") }} &copy; {{ copyright }}</span> |
-          Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
-          <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+          <span class="copyright">{{ _("Copyright") }} &copy; {{ copyright }}</span>.
+
+          {%- if build_id and build_url %}
+            {% trans build_url=build_url, build_id=build_id %}
+              <span class="build">
+                Build
+                <a href="{{ build_url }}">{{ build_id }}</a>.
+              </span>
+            {% endtrans %}
+          {%- elif commit %}
+            {% trans commit=commit %}
+              <span class="commit">
+                Revision <code>{{ commit }}</code>.
+              </span>
+            {% endtrans %}
+          {%- elif last_updated %}
+            {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+          {%- endif %}
+
+          {% if hasdoc(pagename) %}
+            <span class="edit-info">
+            {% if display_github %}
+              {% if check_meta and 'github_url' in meta %}
+                <a href="{{ meta['github_url'] }}"> {{ _('Edit on GitHub') }}</a>
+              {% else %}
+                <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/{{ theme_vcs_pageview_mode|default("blob") }}/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}"> {{ _('Edit on GitHub') }}</a>
+              {% endif %}
+            {% elif show_source and source_url_prefix %}
+              <a href="{{ source_url_prefix }}{{ pagename }}{{ suffix }}">{{ _('View page source') }}</a>
+            {% elif show_source and has_source and sourcename %}
+              <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> {{ _('View page source') }}</a>
+            {% endif %}
+            </span>
+          {% endif %}
         </div>
         {% endblock footer %}
       </footer>

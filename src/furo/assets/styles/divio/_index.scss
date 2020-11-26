@@ -1,7 +1,11 @@
-@import "./_variables";
+@import "../_variables";
 
 @import "./header";
 @import "./footer";
 @import "./content";
 @import "./sidebar";
 @import "./toc-tree";
+@import "./breadcrumbs";
+@import "./admonition";
+@import "./permalink";
+@import "./code";

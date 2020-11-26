@@ -1,4 +1,7 @@
-@import "./_variables";
+@import "../_variables";
+
+$divio-header-height: 40px;
+$divio-transition: all ease-in-out 100ms;
 
 .divio-header {
   position: relative;
@@ -8,15 +11,15 @@
 
 .divio-header__inner {
   box-sizing: border-box;
-  min-height: $header-height + 2 * 20px;
+  min-height: $divio-header-height + 2 * 20px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   margin: 0 auto;
-  font-size: $font-size-sm;
-  line-height: $line-height-sm;
+  font-size: 14px;
+  line-height: 21/14;
   width: 100%;
   position: relative;
   z-index: 200;
@@ -42,12 +45,12 @@
   margin-top: 5px;
 
   > a {
-    color: $color-secondary;
+    color: var(--color-foreground-primary);
 
     &:hover,
     &:active,
     &:focus {
-      color: $color-secondary-hover;
+      color: var(--color-link--hover);
     }
   }
 
@@ -89,18 +92,18 @@
 
 .divio-header__nav-anchor {
   white-space: nowrap;
-  color: $body-color;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-bold;
-  line-height: $line-height-sm;
-  transition: $transition;
+  color: var(--color-foreground-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21/14;
+  transition: $divio-transition;
   text-decoration: none;
   padding: 0 14px;
 
   &:hover,
   &:active,
   &:focus {
-    color: $color-primary;
+    color: var(--color-brand-primary);
     text-decoration: none;
   }
 
@@ -132,20 +135,20 @@
 .divio-header__nav-button {
   display: inline-block;
   white-space: nowrap;
-  color: $body-color;
+  color: var(--color-foreground-primary);
   font-size: 14px;
   font-weight: 700;
   line-height: 1.5;
   transition: all 0.1s ease-in-out;
 
   border-radius: 40px;
-  border: 1px solid $body-color;
+  border: 1px solid var(--color-foreground-primary);
   padding: 8px 20px !important;
 
   &:hover,
   &:active,
   &:focus {
     color: white;
-    background-color: $body-color;
+    background-color: var(--color-foreground-primary);
   }
 }

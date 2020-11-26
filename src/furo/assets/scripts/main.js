@@ -43,7 +43,7 @@
   }
 
   function setup() {
-    setupScrollHandler();
+    // setupScrollHandler();
 
     if (tocScroll === null) {
       return;

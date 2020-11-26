@@ -1,33 +1,33 @@
-@import "./_variables";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: none;
+  font-weight: 700;
+  margin-top: 40px;
 
-.link-style {
-  color: $color-primary;
-  &:hover {
-    color: $color-secondary-hover;
+  a {
+    color: var(--color-foreground-primary);
   }
 }
 
 h1 {
   font-size: 48px;
   line-height: 60px;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 h2 {
   font-size: 30px;
   line-height: 40px;
-  font-weight: 300;
 }
 
 h3 {
   font-size: 24px;
   line-height: 33px;
-  text-transform: uppercase;
-  font-weight: 300;
-}
-
-h4 {
-  text-transform: uppercase;
 }
 
 h4,
@@ -35,7 +35,6 @@ h5,
 h6 {
   font-size: 18px;
   line-height: 25px;
-  font-weight: 700;
 }
 
 p {
@@ -47,16 +46,4 @@ p {
 
 a {
   text-decoration: none;
-}
-
-// link assignments
-a,
-.toc-tree .scroll-current > .reference,
-.a.muted-link,
-.related-pages a {
-  @extend .link-style;
-}
-
-.related-pages a:hover .page-info .title {
-  color: $color-secondary-hover;
 }

@@ -1,18 +1,22 @@
-@import "./_variables";
+.sidebar-drawer {
+  @media (max-width: 1313px) {
+    z-index: 101;
+  }
+}
 
 .sidebar-brand {
   display: none;
 }
 
 .sidebar-search-container {
-  margin-top: $content-space;
+  margin-top: $content-spacing;
 }
 
 .sidebar-tree {
   padding: 0 0 10px;
 
-  .toctree-l1 > .reference {
-    @extend .link-style;
+  li > ul {
+    font-size: 14px;
   }
 
   .toctree-l1 > label .icon {
@@ -26,7 +30,7 @@
 }
 
 .sidebar-search {
-  border: 1px solid #E6ECF1;
+  border: 1px solid var(--color-background-border);
   border-right: 0;
   border-radius: 2px 0 0 2px;
 }

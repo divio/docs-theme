@@ -1,38 +1,42 @@
-@import "./_variables";
-
 $toc-tree-link-distance: 20px;
 
 .toc-drawer {
-  z-index: 101;
-
-  @media (min-width: 1313px) {
-    background: transparent;
+  @media (max-width: 1313px) {
+    z-index: 101;
   }
 }
 
+.toc-scroll {
+  overflow: auto;
+  margin-top: $content-spacing;
+}
+
 .toc-tree {
-  margin-top: $content-space;
-  padding-top: 0;
+  padding: 10px 0;
   padding-left: 0;
 
-  > ul,
-  > li {
-    padding-left: 0;
+  ul,
+  li {
+    padding-left: 0 !important;
+    padding-top: 0 !important;
   }
 
-  ul ul li {
-    padding-top: 0;
-    margin-left: -1px;
-    border-left: 2px solid transparent;
-  }
-
-  ul ul a {
+  a {
     display: block;
     padding: 5px 0 5px $toc-tree-link-distance;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
   }
 
-  .scroll-current {
-    border-left: 2px solid $color-primary;
+  a a {
+    padding-left: $toc-tree-link-distance * 2;
+  }
+  a a a {
+    padding-left: $toc-tree-link-distance * 3;
+  }
+
+  .scroll-current > a {
+    border-left: 2px solid var(--color-brand-primary);
   }
 }
 
@@ -41,6 +45,7 @@ $toc-tree-link-distance: 20px;
 }
 
 .toc-title {
+  color: var(--color-foreground-primary);
   display: inline-block;
   font-size: 10px;
   font-weight: 700;
@@ -56,5 +61,5 @@ $toc-tree-link-distance: 20px;
   height: 15px;
   padding-left: $toc-tree-link-distance;
 
-  color: $gray;
+  color: var(--color-foreground-primary);
 }
