@@ -7,6 +7,7 @@ $toc-tree-link-distance: 20px;
 }
 
 .toc-scroll {
+  max-height: calc(100vh - 120px); // header plus margin
   overflow: auto;
   margin-top: $content-spacing;
 }

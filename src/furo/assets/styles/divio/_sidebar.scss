@@ -1,6 +1,6 @@
 .sidebar-drawer {
-  @media (max-width: 1313px) {
-    z-index: 101;
+  @media (max-width: 1104px) {
+    z-index: 1001;
   }
 }
 
@@ -14,6 +14,7 @@
 
 .sidebar-tree {
   padding: 0 0 10px;
+  margin-bottom: 60px; // versions
 
   li > ul {
     font-size: 14px;

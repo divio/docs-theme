@@ -18,6 +18,10 @@ Make sure you have a **virtual environment activated**.
 - `nox -s lint` to run linting
 - `nox -s docs-live` to start the local development server
 
+## Contribute back
+
+- make sure that on hover the .page-info .title hover effect is set correctly
+
 ## License
 
 This project is licensed under the MIT License.

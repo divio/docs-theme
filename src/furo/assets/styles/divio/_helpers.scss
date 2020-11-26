@@ -1,0 +1,55 @@
+// these were previously embedded inline styles into the documentation
+// place additional ones in here
+
+// column layouts
+
+@media only screen and (min-width: 1000px),
+  only screen and (min-width: 500px) and (max-width: 768px) {
+  .column {
+    float: left;
+    width: 45%;
+    margin-right: 5%;
+    margin-bottom: 30px;
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+}
+
+.column img {
+  border: 1px solid black;
+}
+
+.clearfix {
+  clear: both;
+}
+
+// visuals
+.main-visual {
+  margin-bottom: 0 !important;
+}
+
+// responsive handling
+.embed-responsive {
+  position: relative;
+  width: 100%;
+}
+.embed-responsive:before {
+  display: block;
+  content: "";
+}
+.embed-responsive-item,
+.embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.embed-responsive-16by9::before {
+  padding-top: 56.25%;
+}
+.embed-responsive-4by3::before {
+  padding-top: 75%;
+}
