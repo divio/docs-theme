@@ -220,35 +220,35 @@ $admonitions: (
   --color-link-underline--hover: var(--color-foreground-border);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-problematic: #b81e1e;
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --color-problematic: #b81e1e;
 
-    // Base Colors
-    --color-foreground-primary: #ffffffd9; // for main text and headings
-    --color-foreground-secondary: #9ca0a5; // for secondary text
-    --color-foreground-muted: #81868d; // for muted text
-    --color-foreground-border: #666666; // for content borders
+//     // Base Colors
+//     --color-foreground-primary: #ffffffd9; // for main text and headings
+//     --color-foreground-secondary: #9ca0a5; // for secondary text
+//     --color-foreground-muted: #81868d; // for muted text
+//     --color-foreground-border: #666666; // for content borders
 
-    --color-background-primary: #131416; // for content
-    --color-background-secondary: #1a1c1e; // for navigation + ToC
-    --color-background-hover: #1e2124ff; // for navigation-item hover
-    --color-background-hover--transparent: #1e212400;
-    --color-background-border: #303335; // for UI borders
+//     --color-background-primary: #131416; // for content
+//     --color-background-secondary: #1a1c1e; // for navigation + ToC
+//     --color-background-hover: #1e2124ff; // for navigation-item hover
+//     --color-background-hover--transparent: #1e212400;
+//     --color-background-border: #303335; // for UI borders
 
-    // Announcements
-    --color-announcement-background: #000000dd;
-    --color-announcement-text: #eeebee;
+//     // Announcements
+//     --color-announcement-background: #000000dd;
+//     --color-announcement-text: #eeebee;
 
-    // Brand colors
-    --color-brand-primary: #00bbff;
-    --color-brand-content: #00bbff;
+//     // Brand colors
+//     --color-brand-primary: #00bbff;
+//     --color-brand-content: #00bbff;
 
-    // Highlighted text (search)
-    --color-highlighted-background: #083563;
-    --color-highlighted-text: var(--color-foreground-primary);
+//     // Highlighted text (search)
+//     --color-highlighted-background: #083563;
+//     --color-highlighted-text: var(--color-foreground-primary);
 
-    // Admonitions
-    --color-admonition-background: #18181a;
-  }
-}
+//     // Admonitions
+//     --color-admonition-background: #18181a;
+//   }
+// }
