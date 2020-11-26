@@ -7,7 +7,7 @@ import tempfile
 
 import nox
 
-PACKAGE_NAME = "furo"
+PACKAGE_NAME = "divio-docs"
 nox.options.sessions = ["lint", "test"]
 
 
@@ -112,7 +112,7 @@ def get_release_versions(version_file):
 @nox.session
 def release(session):
     version_file = f"src/{PACKAGE_NAME}/__init__.py"
-    allowed_upstreams = ["git@github.com:pradyunsg/{PACKAGE_NAME}.git"]
+    allowed_upstreams = ["git@gitlab.com:divio/cloud/{PACKAGE_NAME}.git"]
 
     release_version, next_version = get_release_versions(version_file)
 
