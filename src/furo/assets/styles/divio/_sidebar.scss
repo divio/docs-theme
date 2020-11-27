@@ -1,3 +1,8 @@
+.sidebar-sticky {
+  position: relative;
+  min-height: 100%;
+}
+
 .sidebar-drawer {
   @media (max-width: 1104px) {
     z-index: 1001;
@@ -6,10 +11,6 @@
 
 .sidebar-brand {
   display: none;
-}
-
-.sidebar-search-container {
-  margin-top: $content-spacing;
 }
 
 .sidebar-tree {
@@ -27,6 +28,7 @@
 
 // search
 .sidebar-search-container {
+  margin-top: $content-spacing;
   background: white;
 }
 
