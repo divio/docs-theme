@@ -42,7 +42,7 @@ $divio-transition: all ease-in-out 100ms;
   position: relative;
   z-index: 201;
   flex-shrink: 0;
-  margin-top: 5px;
+  margin-top: 4px;
 
   > a {
     color: var(--color-foreground-primary);
@@ -72,7 +72,7 @@ $divio-transition: all ease-in-out 100ms;
   @media (min-width: 992px) {
     position: absolute;
     top: 50%;
-    margin: -20px 315px 0;
+    margin: -19px 315px 0;
   }
 
   @media (max-width: 860px) {
@@ -114,7 +114,7 @@ $divio-transition: all ease-in-out 100ms;
 
 .divio-header__meta {
   display: flex;
-  margin: 0;
+  margin: 1px 0 0;
   padding: 0;
   flex-direction: row;
   align-items: center;
