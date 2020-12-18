@@ -25,7 +25,7 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     # Custom Navigation Tree (adds checkboxes and labels)
     toctree = context.get("toctree", lambda **kwargs: "")
     toctree_html = toctree(
-        collapse=False, titles_only=True, maxdepth=-1, includehidden=True
+        collapse=False, titles_only=False, maxdepth=2, includehidden=True
     )
     context["furo_navigation_tree"] = get_navigation_tree(toctree_html)
 
