@@ -6,7 +6,8 @@ h3,
 h4,
 h5,
 h6 {
-  code {
+  code,
+  kbd {
     color: $divio-code-color;
     padding: 0 !important;
     border: none;
@@ -16,17 +17,20 @@ h6 {
 
 pre,
 code,
+kbd,
 .rst-content tt,
 .rst-content code,
-kbd,
+.rst-content kbd,
 samp {
   font-family: monospace, serif;
   font-size: 1em;
 }
 
 code,
+kbd,
 .rst-content tt,
-.rst-content code {
+.rst-content code,
+.rst-content kbd {
   font-family: var(--font-stack--monospace);
   font-size: 90%;
   color: $divio-code-color;
