@@ -15,6 +15,7 @@ hyperlinks
 images
 lists
 tables
+tabs
 ```
 
 [myst-markdown]: https://myst-parser.readthedocs.io/en/latest/

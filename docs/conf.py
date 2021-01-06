@@ -26,15 +26,19 @@ author = "Pradyun Gedam"
 #
 
 extensions = [
+    # Sphinx's own extensions
     "sphinx.ext.autodoc",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
+    # Our custom extension, only meant for Furo's own documentation.
+    "furo.sphinxext",
+    # External stuff
     "myst_parser",
+    "sphinx_copybutton",
     "sphinx_inline_tabs",
-    "furo.sphinxext",  # only meant for Furo's own documentation.
 ]
 templates_path = ["_templates"]
 
@@ -50,7 +54,7 @@ extlinks = {
 #
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    "sphinx": ("https://www.sphinx-doc.org/", None),
+    "sphinx": ("https://www.sphinx-doc.org/en/master", None),
 }
 
 #
@@ -73,8 +77,3 @@ html_theme = "furo"
 html_title = "Furo"
 
 html_static_path = ["_static"]
-html_theme_options = {
-    "announcement": (
-        "Furo is under active development, and this documentation is not written yet!"
-    ),
-}

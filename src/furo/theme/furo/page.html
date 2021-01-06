@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% if meta %}
+  {% set sequential_nav = meta.sequential_nav %}
+{% endif %}
+
+{% block body -%}
+{% include "partials/icons.html" %}
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+{% if theme_announcement -%}
+<div class="announcement">
+  <aside class="announcement-content">
+    {% block announcement %} {{ theme_announcement }} {% endblock announcement %}
+  </aside>
+</div>
+{%- endif %}
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="{{ pathto(master_doc) }}"><div class="brand">{{ docstitle }}</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      {% block left_sidebar %}
+      <div class="sidebar-sticky">
+        {%- for sidebar_section in sidebars %}
+          {%- include sidebar_section %}
+        {%- endfor %}
+      </div>
+      {% endblock left_sidebar %}
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      {% include "divio/breadcrumbs.html" %}
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        {% block content %}{{ body }}{% endblock %}
+      </article>
+      <footer>
+        {% block footer %}
+        <div class="related-pages">
+          {% if sequential_nav and next -%}
+            <a class="next-page" href="{{ next.link }}">
+              <div class="page-info">
+                <div class="context">
+                  <span>{{ _("Next") }}</span>
+                </div>
+                <div class="title">{{ next.title }}</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          {%- endif %}
+          {% if sequential_nav and prev -%}
+            <a class="prev-page" href="{{ prev.link }}">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>{{ _("Previous") }}</span>
+                </div>
+                {% if prev.link == pathto(master_doc) %}
+                <div class="title">{{ _("Home") }}</div>
+                {% else %}
+                <div class="title">{{ prev.title }}</div>
+                {% endif %}
+              </div>
+            </a>
+          {%- endif %}
+        </div>
+
+        <div class="related-information">
+          <span class="copyright">{{ _("Copyright") }} &copy; {{ copyright }}</span>.
+
+          {%- if build_id and build_url %}
+            {% trans build_url=build_url, build_id=build_id %}
+              <span class="build">
+                Build
+                <a href="{{ build_url }}">{{ build_id }}</a>.
+              </span>
+            {% endtrans %}
+          {%- elif commit %}
+            {% trans commit=commit %}
+              <span class="commit">
+                Revision <code>{{ commit }}</code>.
+              </span>
+            {% endtrans %}
+          {%- elif last_updated %}
+            {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+          {%- endif %}
+
+          {% if hasdoc(pagename) %}
+            <span class="edit-info">
+            {% if display_github %}
+              {% if check_meta and 'github_url' in meta %}
+                <a href="{{ meta['github_url'] }}"> {{ _('Edit on GitHub') }}</a>
+              {% else %}
+                <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/{{ theme_vcs_pageview_mode|default("blob") }}/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}"> {{ _('Edit on GitHub') }}</a>
+              {% endif %}
+            {% elif show_source and source_url_prefix %}
+              <a href="{{ source_url_prefix }}{{ pagename }}{{ suffix }}">{{ _('View page source') }}</a>
+            {% elif show_source and has_source and sourcename %}
+              <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> {{ _('View page source') }}</a>
+            {% endif %}
+            </span>
+          {% endif %}
+        </div>
+        {% endblock footer %}
+      </footer>
+    </div>
+    <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
+      {% block right_sidebar %}
+      {% if not furo_hide_toc %}
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-tree">
+          <div class="toc-title-container">
+            <svg class="toc-tree-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" class="icon-7f6730be--text-3f89f380"><g><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></g></svg>
+            <span class="toc-title">
+              {{ _("In this page") }}
+            </span>
+          </div>
+          {{ toc }}
+        </div>
+      </div>
+      {% endif %}
+      {% endblock right_sidebar %}
+    </aside>
+  </main>
+</div>
+{%- endblock %}

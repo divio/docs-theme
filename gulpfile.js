@@ -18,11 +18,11 @@ var easyImport = require("postcss-easy-import");
 
 var plugins = [easyImport(), autoprefixer(), cssnano()];
 var src_path = "./src/furo/assets/";
-var dest_path = "./src/furo/theme/static";
+var dest_path = "./src/furo/theme/furo/static";
 
 function css() {
   return gulp
-    .src(src_path + "styles/[!_]*.scss", { since: gulp.lastRun(css) })
+    .src(src_path + "styles/[!_]*.sass", { since: gulp.lastRun(css) })
     .pipe(sourcemaps.init())
     .pipe(sass({ fiber: Fiber }).on("error", sass.logError))
     .pipe(postcss(plugins))

@@ -1,7 +1,14 @@
+---
+hide-toc: true
+---
+
 # Furo
 
-```{todo}
-Write this.
+A clean customisable Sphinx documentation theme.
+
+```{include} ../README.md
+:start-after: <!-- start elevator-pitch -->
+:end-before: <!-- end elevator-pitch -->
 ```
 
 ```{toctree}
@@ -10,6 +17,7 @@ Write this.
 quickstart
 customisation/index
 reference/index
+recommendations
 ```
 
 ```{toctree}
@@ -17,6 +25,7 @@ reference/index
 :hidden:
 
 contributing/index
+kitchen-sink/index
 changelog
 license
 GitHub Repository <https://github.com/pradyunsg/furo>

@@ -10,10 +10,13 @@ dl.py, dl.cpp, dl.c, dl.js
     > :first-child
       margin-top: 0.125rem
     > :last-child
-      margin-bottom: 0.75rem
+      margin-bottom: 1.25rem
 
+  // This is used for the arguments
   .field-list
     margin-bottom: 0.75rem
+
+    // "Headings" (like "Parameters" and "Return")
     dt
       text-transform: uppercase
       font-size: var(--font-size--small)
@@ -34,10 +37,23 @@ dl.py, dl.cpp, dl.c, dl.js
   // Colorize the elements
   > dt
     color: var(--color-api-overall)
+    &:target
+      background-color: var(--color-api-highlight-on-target)
 
-dl.class, dl.function, dl.method, dl.enum, dl.enum-class, dl.enum-struct, dl.type
-  > dt .property
-    color: var(--color-api-keyword)
+dl.class,
+dl.function,
+dl.method,
+dl.enum,
+dl.enum-class,
+dl.enum-struct,
+dl.type,
+dl.exception
+  > dt
+    padding-left: 3em
+    text-indent: -3em
+    .property
+      color: var(--color-api-keyword)
+      padding-right: 0.25rem
 
 .sig-name
   font-weight: bold

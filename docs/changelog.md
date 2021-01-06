@@ -1,5 +1,123 @@
 # Changelog
 
+## 2020.12.30.beta24
+
+- Disable environment caching if `pygments_dark_style` is changed.
+- Revert to earlier background color for inline literals, and allow configuring
+  it via a CSS variables.
+
+## 2020.12.28.beta23
+
+- Fix code-block overflow issue, introduced by the fix for sphinx-copybutton compatibility.
+- Tweak horizontal rules, to always be 1px tall.
+- Tweak background color for inline literals, to match code blocks.
+
+## 2020.12.28.beta22
+
+- MAJOR: Move theme files into a "furo" folder.
+  - This affects any users deriving from furo's templates.
+- Add (custom) support for `pygments_dark_style`.
+- Add support for `genindex` pages.
+  - Note that `html_split_index` is not supported at this time.
+- Add support for highlighting API elements, when accessed via "#hash" in URL.
+- Add `language_data.js` to search page, fixing `Stemmer` related failures in Sphinx 3.4.
+- Document how to add a site-wide announcement.
+- Fix sphinx-copybutton placement on scrollable code blocks.
+- Generate an error page, for documents using `layout.html` from Sphinx's `basic` theme.
+- Translate placeholder in sidebar's search.
+- Tweak how additional h1 headings are handled in ToC sidebar.
+- Update dependency constraints, limiting compatibility to Sphinx 3.x versions.
+
+## 2020.12.09.beta21
+
+- Rebuild theme assets, for main release.
+
+## 2020.12.09.beta20
+
+- Clarify expectations around sidebar customisation.
+- Declare plugin information to pacify Sphinx's "are you parallel" check.
+- Disable sidebar-follows-you-as-you-scroll Javascript.
+- Fix scrollbar styles affecting document body.
+- Tweak colors for problematic content.
+- Tweak how words wrap in sidebar title.
+- Tweak spacing in API documentation.
+- Tweak wrapping of text in API function/class signatures.
+
+## 2020.11.27.beta19
+
+- Add styling for rubrics.
+- Add styling for scrollbars, to make them match the theme.
+- Fix bottom-of-page JS conditional.
+- Fix stability of resources hashes. (thanks [@dvarrazzo](https://github.com/dvarrazzo))
+- Fix styling for multi-term definition lists items.
+- Re-add our development documentation kitchen-sink.
+- Tweak how ToC sidebar handles scrollbars.
+- Tweak styling for basic definition lists.
+
+## 2020.11.19.beta18
+
+- Fix search page. It had become non-operational, due to changes to JS
+  in the previous release.
+
+## 2020.11.15.beta17
+
+- Add properly documented mechanisms for customising the sidebar.
+- Add dedicated styling for ethical ads.
+- Tweak how JS scripts are loaded.
+
+## 2020.11.14.beta16
+
+- Add a separate file for CSS that affects other Sphinx extensions.
+- Add content to all the existing pages in documentation.
+- Clarify that Furo is biased toward smaller documentation sets.
+- Clarify that logo files need to be in `html_static_path`
+- Improve various explanations in documentation.
+- Tweak borders inside tables.
+- Tweak bottom spacing on right sidebar.
+- Tweak CSS and JS blocks in `base.html` template.
+- Tweak how captions for toctrees look.
+- Tweak spacing on sidebar ad on ReadTheDocs.
+
+## 2020.11.10.beta15
+
+- Add a recommendations page, for plugins
+- Add support for different logos in light and dark mode
+- Change location of TOC drawer icon on mobile
+- Drop support for `html_sidebars` based customisation.
+- Improve how the RTD ads work
+- Improve TOC sidebar auto-scroll functional
+- Significantly improve footer capabilities
+
+## 2020.11.01.beta14
+
+- Add classifiers to the theme.
+- Add friendly messages for users of `html_sidebars`.
+- Add link to homepage, in mobile header.
+- Add support for ethical ads in the sidebar.
+- Change `css_variables` to `light_css_variables`.
+- Change font stack to match to GitHub.
+- Change the color used for `<hr>` tags.
+- Change unsplash URLs to use cute+animal as cues
+- Document `navigation_with_keys`.
+- Drop logic that jumps toc-scroll to bottom-of-page.
+- Improve customisation documentation.
+- Remove text underline from headerlink.
+- Strip tags in title.
+
+## 2020.10.15.beta13
+
+- Add a direct dependency on Sphinx.
+- Add styling for "highlighted text" in dark mode.
+- Add support for sphinx-inline-tabs.
+- Change the default development branch name to `main`.
+- Drop customisations for sphinx-panel's tabs.
+- Rework the entire handling of background and foreground colours.
+- Tweak API documentation, when presented in dark mode.
+- Tweak Bootstrap 4 `.container` styling (comes from sphinx-panel).
+- Tweak borders on tables.
+- Tweak dark mode colors.
+- Tweak light mode colors.
+
 ## 2020.10.13.beta12
 
 - Fix image link in README, to show up correctly on PyPI.

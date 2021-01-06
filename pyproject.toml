@@ -11,7 +11,24 @@ description-file = "README.md"
 requires-python = ">=3.5"
 requires = [
   "beautifulsoup4",
-  "sphinx",
+  "sphinx ~= 3.0",
+]
+classifiers = [
+  "Framework :: Sphinx",
+  "Framework :: Sphinx :: Theme",
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Web Environment",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.5",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Operating System :: OS Independent",
+  "Topic :: Documentation",
+  "Topic :: Software Development :: Documentation",
 ]
 
 [tool.flit.metadata.requires-extra]
@@ -32,7 +49,7 @@ doc = [
 [tool.flit.sdist]
 include = [
   # Generated assets
-  "src/furo/theme/static/*/*",
+  "src/furo/theme/furo/static/*/*",
 ]
 exclude = [
   "docs/", "src/furo/assets",
