@@ -83,8 +83,8 @@ def _compute_navigation_tree(context):
         toctree = context["toctree"]
         toctree_html = toctree(
             collapse=False,
-            titles_only=True,
-            maxdepth=-1,
+            titles_only=False,
+            maxdepth=2,
             includehidden=True,
         )
     else:
@@ -126,14 +126,6 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     if app.config.html_theme != "furo":
         return
 
-<<<<<<< HEAD
-    # Custom Navigation Tree (adds checkboxes and labels)
-    toctree = context.get("toctree", lambda **kwargs: "")
-    toctree_html = toctree(
-        collapse=False, titles_only=False, maxdepth=2, includehidden=True
-    )
-    context["furo_navigation_tree"] = get_navigation_tree(toctree_html)
-=======
     # Add attributes to the scripts loaded with `js_tag`
     sphinx_js_tag = context["js_tag"]
 
@@ -141,7 +133,6 @@ def _html_page_context(app, pagename, templatename, context, doctree):
         if isinstance(js, JavaScript):
             js.attributes["defer"] = "defer"
         return sphinx_js_tag(js)
->>>>>>> ecfee9c5a3872cfac72f5ee8c63c7d474ee8e60f
 
     context["js_tag"] = furo_js_tag
 
@@ -155,13 +146,6 @@ def _html_page_context(app, pagename, templatename, context, doctree):
 
     # Inject information about styles
     context["furo_pygments"] = {
-<<<<<<< HEAD
-        "light": _get_colors_for_codeblocks(
-            app.builder.highlighter, fg="black", bg="white",
-        ),
-        "dark": _get_colors_for_codeblocks(
-            app.builder.dark_highlighter, fg="white", bg="black",
-=======
         "light": get_colors_for_codeblocks(
             app.builder.highlighter,
             fg="black",
@@ -171,7 +155,6 @@ def _html_page_context(app, pagename, templatename, context, doctree):
             app.builder.dark_highlighter,
             fg="white",
             bg="black",
->>>>>>> ecfee9c5a3872cfac72f5ee8c63c7d474ee8e60f
         ),
     }
 
