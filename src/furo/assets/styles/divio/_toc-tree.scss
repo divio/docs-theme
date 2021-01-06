@@ -1,5 +1,10 @@
 $toc-tree-link-distance: 20px;
 
+.toc-scroll {
+  padding-top: $content-spacing;
+  margin-top: 0 !important;
+}
+
 .toc-drawer {
   @media (max-width: 1313px) {
     z-index: 101;
