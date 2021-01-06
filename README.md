@@ -10,6 +10,7 @@ Make sure you have a **virtual environment activated**.
 - `npm install`
 - `pip install nox`
 - `git submodule update --init --recursive`
+  (or copy https://github.com/divio/divio-cloud-docs as "docs-divio" into the root)
 
 ## Usage
 
