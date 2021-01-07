@@ -41,6 +41,7 @@ def docs_live(session):
     build_command = "./node_modules/.bin/gulp build"
     _install_this_project_with_flit(session, extras=["doc"], editable=True)
     session.install("sphinx-autobuild", *additional_dependencies)
+    session.install("divio-cli", *additional_dependencies)
 
     with tempfile.TemporaryDirectory() as destination:
         session.run(
