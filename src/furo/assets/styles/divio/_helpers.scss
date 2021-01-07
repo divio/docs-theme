@@ -72,7 +72,7 @@
   border: 1px solid #1a406b;
   background-color: #fff;
 
-  transition: all .15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 
   &:hover {
     color: #fff;
@@ -92,5 +92,11 @@
 
   &:hover {
     background-color: #009fd9;
+  }
+}
+
+.custon-headings {
+  h3 {
+    margin-top: 0;
   }
 }
