@@ -53,3 +53,44 @@
 .embed-responsive-4by3::before {
   padding-top: 75%;
 }
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  color: var(--color-foreground-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 3px;
+
+  border: 1px solid #1a406b;
+  background-color: #fff;
+
+  transition: all .15s ease-in-out;
+
+  &:hover {
+    color: #fff;
+    background-color: #1a406b;
+  }
+}
+
+.btn-primary {
+  color: #fff;
+  border-color: var(--color-brand-primary);
+  background-color: var(--color-brand-primary);
+}
+
+.btn-small {
+  font-size: 16px;
+  padding: 5px 10px;
+
+  &:hover {
+    background-color: #009fd9;
+  }
+}

@@ -84,7 +84,7 @@ def _compute_navigation_tree(context):
         toctree_html = toctree(
             collapse=False,
             titles_only=False,
-            maxdepth=2,
+            maxdepth=3,
             includehidden=True,
         )
     else:
