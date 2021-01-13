@@ -1,0 +1,18 @@
+@import "../variables";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@import "./header";
+@import "./footer";
+@import "./content";
+@import "./sidebar";
+@import "./toc-tree";
+@import "./breadcrumbs";
+@import "./admonition";
+@import "./permalink";
+@import "./versions";
+@import "./code";
+@import "./tabs";
+@import "./helpers";

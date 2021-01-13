@@ -1,0 +1,34 @@
+.sidebar-drawer {
+  @media (max-width: 1104px) {
+    z-index: 1001;
+  }
+}
+
+.sidebar-brand {
+  display: none;
+}
+
+.sidebar-tree {
+  padding: 0 0 10px;
+  margin-bottom: 60px; // versions
+
+  li > ul {
+    font-size: 14px;
+  }
+
+  .toctree-l1 > label .icon {
+    color: black;
+  }
+}
+
+// search
+.sidebar-search-container {
+  margin-top: $content-spacing;
+  background: white;
+}
+
+.sidebar-search {
+  border: 1px solid var(--color-background-border);
+  border-right: 0;
+  border-radius: 2px 0 0 2px;
+}

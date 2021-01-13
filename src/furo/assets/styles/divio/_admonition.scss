@@ -1,0 +1,17 @@
+$divio-admonition-spacing: 20px;
+
+.admonition {
+  font-size: 16px;
+  padding: 0 0 $divio-admonition-spacing $divio-admonition-spacing;
+
+  p {
+    font-size: 16px;
+  }
+
+  p.admonition-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: -$divio-admonition-spacing;
+    margin-bottom: $divio-admonition-spacing;
+  }
+}

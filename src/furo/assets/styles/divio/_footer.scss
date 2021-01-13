@@ -1,0 +1,44 @@
+.related-information {
+  font-size: 14px;
+  color: var(--color-foreground-muted);
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 20px;
+
+  code {
+    font-size: 12px;
+    color: var(--color-foreground-muted);
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  a {
+    color: var(--color-foreground-muted);
+    text-decoration: underline;
+  }
+}
+
+.related-pages {
+  margin-top: 30px;
+
+  .context span {
+    font-weight: 700;
+  }
+
+  .prev-page svg {
+    margin-left: -2px;
+  }
+
+  .next-page svg {
+    margin-right: -2px;
+  }
+}
+
+.related-pages a:hover .page-info .title {
+  color: var(--color-link--hover);
+}
+
+.edit-info {
+  float: right;
+}

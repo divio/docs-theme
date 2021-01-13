@@ -1,0 +1,60 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "furo"
+author = "Pradyun Gedam"
+author-email = "mail@pradyunsg.me"
+home-page = "https://github.com/pradyunsg/furo"
+description-file = "README.md"
+requires-python = ">=3.5"
+requires = [
+  "beautifulsoup4",
+  "sphinx ~= 3.0",
+]
+classifiers = [
+  "Framework :: Sphinx",
+  "Framework :: Sphinx :: Theme",
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Web Environment",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.5",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Operating System :: OS Independent",
+  "Topic :: Documentation",
+  "Topic :: Software Development :: Documentation",
+]
+
+[tool.flit.metadata.requires-extra]
+test = [
+  "pytest",
+  "pytest-cov",
+  "pytest-xdist",
+]
+doc = [
+  "sphinx-inline-tabs",
+  "sphinxcontrib-mermaid",
+  "sphinxcontrib-spelling",
+]
+
+[tool.flit.entrypoints]
+"sphinx.html_themes" = {furo = "furo"}
+
+[tool.flit.sdist]
+include = [
+  # Generated assets
+  "src/furo/theme/furo/static/*/*",
+]
+exclude = [
+  "docs/", "src/furo/assets",
+  # JS stuff
+  "gulpfile.js", "package.json", "package-lock.json",
+  # Linting stuff
+  ".flake8", ".isort.cfg", ".pre-commit-config.yaml",
+]

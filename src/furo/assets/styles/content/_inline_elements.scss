@@ -1,0 +1,74 @@
+// Abbreviations
+abbr[title] {
+  cursor: help;
+}
+
+// Inline code
+code.literal,
+kbd {
+  background: var(--color-background-primary);
+  border-radius: 0.2em;
+  // Make the font smaller, and use padding to recover.
+  font-size: var(--font-size--small--2);
+  padding: 0.1em 0.2em;
+}
+
+// Footnote References
+.footnote-reference {
+  font-size: var(--font-size--small--4);
+  vertical-align: super;
+}
+
+// Permalinks
+//    Adapted from Sphinx-RTD-theme's corresponding CSS
+//    https://github.com/readthedocs/sphinx_rtd_theme/blob/1a32899b/src/sass/_theme_rst.sass#L201
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl dt,
+p.caption,
+table > caption,
+.code-block-caption {
+  > .headerlink {
+    font-weight: 100;
+    margin-left: 0.5rem;
+    visibility: hidden;
+  }
+  &:hover > .headerlink {
+    visibility: visible;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  :target > &:first-child > .headerlink {
+    visibility: visible;
+  }
+}
+
+// Captions
+article p.caption,
+table > caption,
+.code-block-caption {
+  font-size: var(--font-size--small);
+  text-align: center;
+}
+
+.toctree-wrapper.compound {
+  .caption {
+    text-align: initial;
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  > ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
