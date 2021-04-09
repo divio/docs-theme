@@ -11,18 +11,6 @@
   }
 }
 
-.injected {
-  position: absolute;
-  height: 100%;
-  z-index: -1;
-
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-end;
-  width: calc((100% - #{$full-width}) / 2 + #{$sidebar-width});
-  min-width: $sidebar-width;
-}
-
 .rst-versions.rst-badge {
   position: fixed;
   bottom: 0 !important;
