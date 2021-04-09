@@ -42,6 +42,10 @@ $toc-tree-link-distance: 20px;
     padding: 5px 0 5px $toc-tree-link-distance;
     border-left: 2px solid transparent;
     margin-left: -1px;
+
+    &:hover {
+      color: #000;
+    }
   }
 
   .scroll-current > a {

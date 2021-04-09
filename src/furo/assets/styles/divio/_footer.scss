@@ -41,4 +41,10 @@
 
 .edit-info {
   float: right;
+
+  a:hover,
+  a:active,
+  a:focus {
+    color: #000;
+  }
 }

@@ -1,3 +1,5 @@
+// requires a lot of importants as rtd loads a badge_only.css
+
 @media print {
   .rst-versions,
   footer,
@@ -9,24 +11,41 @@
   }
 }
 
-.rst-versions {
+.injected {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  height: 100%;
+  z-index: -1;
+
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  width: calc((100% - #{$full-width}) / 2 + #{$sidebar-width});
+  min-width: $sidebar-width;
+}
+
+.rst-versions.rst-badge {
+  position: fixed;
+  bottom: 0 !important;
+  right: 0 !important;
   z-index: 400;
-  width: 100%;
   color: black;
   background: white !important;
-  border: 1px solid var(--color-background-border);
-  border-right: none;
+  border: 1px solid var(--color-background-border) !important;
+  border-right: none !important;
+  max-width: 150px;
 
   .rst-other-versions {
+    color: var(--color-foreground-muted) !important;
+    font-size: 14px !important;
     display: block;
     padding: 0 20px;
     background: white;
+    padding-bottom: 20px !important;
   }
 
   &:hover {
+    max-width: 100%;
+
     .rst-other-versions {
       display: block;
     }
@@ -35,37 +54,102 @@
       border-bottom: 1px solid var(--color-background-border);
     }
   }
-}
 
-.rst-versions dt {
-  color: black;
-  font-weight: 600;
-}
+  dt {
+    color: black;
+    font-weight: 600;
+  }
 
-.rst-versions a {
-  color: #2980b9;
-  text-decoration: none;
-}
+  dd a {
+    color: var(--color-brand-primary) !important;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--color-link--hover) !important
+    }
+  }
 
-.rst-versions .rst-badge-small {
-  display: none;
-}
+  a {
+    color: #2980b9;
+    text-decoration: none;
+  }
 
-.rst-versions .rst-current-version {
-  padding: 18px 20px 17px;
-  display: flex;
-  text-align: right;
-  font-size: 90%;
-  cursor: pointer;
-  color: black;
-  *zoom: 1;
-  justify-content: space-between;
-  z-index: 999;
-  position: relative;
-  background: white !important;
-}
-.rst-versions .rst-current-version .fa {
-  font-size: 12px;
+  .rst-badge-small {
+    display: none;
+  }
+
+  .rst-current-version {
+    color: var(--color-foreground-muted) !important;
+    font-size: 14px !important;
+    padding: 13px 50px !important;
+    display: flex !important;
+    text-align: right !important;
+    cursor: pointer;
+    *zoom: 1;
+    justify-content: space-between;
+    z-index: 999;
+    position: relative;
+    background: white !important;
+  }
+  .rst-current-version .fa {
+    font-size: 12px;
+  }
+
+  .rst-current-version.rst-out-of-date {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  
+  .rst-current-version.rst-active-old-version {
+    background-color: #f1c40f;
+    color: #000;
+  }
+  
+  &.shift-up .rst-other-versions {
+    display: block;
+  }
+  
+  .rst-other-versions {
+    font-size: 14px;
+    color: gray;
+    display: none;
+    font-family: "Nunito", sans-serif;
+  }
+  .rst-other-versions .rst-other-versions {
+    padding: 20px !important;
+    margin-bottom: 40px;
+  }
+  .rst-other-versions .rst-current-version {
+    display: none !important;
+  }
+  .rst-other-versions dl {
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .rst-other-versions hr {
+    display: none;
+  }
+  
+  .rst-other-versions dd {
+    display: inline-block;
+    margin: 0;
+  }
+  
+  .rst-other-versions dt + dd {
+    margin-left: -6px;
+  }
+  
+  .rst-other-versions dt + strong {
+    margin-left: -6px;
+  }
+  
+  .rst-other-versions dd a {
+    display: inline-block;
+    padding: 6px;
+    color: black;
+  }
 }
 
 .rst-versions .rst-current-version .fa,
@@ -94,61 +178,6 @@
 .rst-versions .rst-current-version .rst-content code.download span:first-child,
 .rst-content code.download .rst-versions .rst-current-version span:first-child,
 .rst-versions .rst-current-version .icon {
-  color: black;
-}
-
-.rst-versions .rst-current-version.rst-out-of-date {
-  background-color: #e74c3c;
-  color: #fff;
-}
-
-.rst-versions .rst-current-version.rst-active-old-version {
-  background-color: #f1c40f;
-  color: #000;
-}
-
-.rst-versions.shift-up .rst-other-versions {
-  display: block;
-}
-
-.rst-versions .rst-other-versions {
-  font-size: 14px;
-  color: gray;
-  display: none;
-  font: 0/0 a;
-}
-.rst-versions .rst-other-versions .rst-other-versions {
-  padding: 20px !important;
-  margin-bottom: 40px;
-}
-.rst-versions .rst-other-versions .rst-current-version {
-  display: none !important;
-}
-.rst-versions .rst-other-versions dl {
-  font-family: "Nunito", sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-}
-.rst-versions .rst-other-versions hr {
-  display: none;
-}
-
-.rst-versions .rst-other-versions dd {
-  display: inline-block;
-  margin: 0;
-}
-
-.rst-versions .rst-other-versions dt + dd {
-  margin-left: -6px;
-}
-
-.rst-versions .rst-other-versions dt + strong {
-  margin-left: -6px;
-}
-
-.rst-versions .rst-other-versions dd a {
-  display: inline-block;
-  padding: 6px;
   color: black;
 }
 
