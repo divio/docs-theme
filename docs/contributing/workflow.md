@@ -79,6 +79,23 @@ Generate the documentation for Furo into the `build/docs` folder. This (mostly) 
 - Run `nox -s release`
 - Once that command succeeds, you're done!
 
+## Installing directly from GitHub
+
+There are times when you might want to install the in-development version of Furo (mostly for testing that a fix actually does fix things).
+
+Furo cannot be installed directly using pip with the Git repository directly. This is because the Git repository does not contained the compiled CSS/JS. The distributions on PyPI have the compiled assets (because they're platform agnostic and plain text).
+
+```sh
+# Clone the repository
+git clone https://github.com/pradyunsg/furo.git
+cd furo
+# Build the static assets
+npm install
+./node_modules/.bin/gulp build
+# Install with pip
+pip install .
+```
+
 [github flow]: https://guides.github.com/introduction/flow/
 [nox]: https://nox.readthedocs.io/en/stable/
 [jinja2]: https://jinja.palletsprojects.com

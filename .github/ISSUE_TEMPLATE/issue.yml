@@ -1,0 +1,42 @@
+name: Trackable Change
+about: >-
+  Please only use this, if you've been advised to do so after discussion. Thanks! 🙏
+title: ""
+body:
+  - type: textarea
+    attributes:
+      label: What's happening?
+      description: A clear and concise description of the current behaviour.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Reproducer
+      description: Steps to reproduce the issue.
+      value: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expectation
+      description: A clear and concise description of what should've happened.
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow the [Code of Conduct](https://github.com/pradyunsg/furo/blob/main/CODE_OF_CONDUCT.md).
+          required: true
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: markdown
+    attributes:
+      value: >-
+        Add additional information (like screenshots!) and description of what
+        change is needed below.

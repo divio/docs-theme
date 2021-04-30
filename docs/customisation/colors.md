@@ -18,7 +18,7 @@ This mechanism allows configuring nearly every facet of Furo's design, including
 Changing Furo's blue accent (used for stylising links, sidebar's content etc) to a purple one:
 
 ```py
-html_theme_config = {
+html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "#7C4DFF",
         "color-brand-content": "#7C4DFF",
@@ -33,13 +33,16 @@ html_theme_config = {
 
 ## Code block styling
 
-Furo does not directly handle highlighting of the code blocks. This is done by Sphinx, and is configurable using [`pygments_style`][sphinx-pygments_style] and [`pygments_dark_style`][sphinx-pygments_dark_style] in `conf.py`.
+Furo does not directly handle highlighting of the code blocks. This is done by Sphinx, and is configurable using [`pygments_style`][sphinx-pygments_style] and `pygments_dark_style` in `conf.py`.
 
 ```py
 pygments_style = "sphinx"
 pygments_dark_style = "monokai"
 ```
 
+```{note}
+`pygments_dark_style` is Furo-specific at this time.
+```
+
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
 [sphinx-pygments_style]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-pygments_style
-[sphinx-pygments_dark_style]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-pygments_dark_style
