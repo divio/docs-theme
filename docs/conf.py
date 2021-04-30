@@ -4,16 +4,6 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 #
-# -- sys.path preparation ----------------------------------------------------
-#
-
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).parent / "demo"))
-
-
-#
 # -- Project information -----------------------------------------------------
 #
 
@@ -65,8 +55,10 @@ todo_include_todos = True
 #
 # -- Options for Markdown files ----------------------------------------------
 #
-myst_admonition_enable = True
-myst_deflist_enable = True
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+]
 myst_heading_anchors = 3
 
 #

@@ -8,7 +8,7 @@ author = "Pradyun Gedam"
 author-email = "mail@pradyunsg.me"
 home-page = "https://github.com/pradyunsg/furo"
 description-file = "README.md"
-requires-python = ">=3.5"
+requires-python = ">=3.6"
 requires = [
   "beautifulsoup4",
   "sphinx ~= 3.0",
@@ -41,6 +41,8 @@ doc = [
   "sphinx-inline-tabs",
   "sphinxcontrib-mermaid",
   "sphinxcontrib-spelling",
+  # Broken release. https://github.com/executablebooks/MyST-Parser/issues/343
+  "docutils != 0.17",
 ]
 
 [tool.flit.entrypoints]
