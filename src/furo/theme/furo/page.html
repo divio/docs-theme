@@ -113,7 +113,7 @@
               {% if check_meta and 'github_url' in meta %}
                 <a href="{{ meta['github_url'] }}"> {{ _('Edit on GitHub') }}</a>
               {% else %}
-                <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/{{ theme_vcs_pageview_mode|default("blob") }}/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}"> {{ _('Edit on GitHub') }}</a>
+                <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}.rst"> {{ _('Edit on GitHub') }}</a>
               {% endif %}
             {% elif show_source and source_url_prefix %}
               <a href="{{ source_url_prefix }}{{ pagename }}{{ suffix }}">{{ _('View page source') }}</a>
