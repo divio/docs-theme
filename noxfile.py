@@ -45,6 +45,8 @@ def docs_live(session):
     session.install("myst_parser", *additional_dependencies)
     session.install("sphinx_copybutton", *additional_dependencies)
     session.install("sphinx_inline_tabs", *additional_dependencies)
+    session.install("sphinx-click", *additional_dependencies)
+    session.install("sphinx-notfound-page", *additional_dependencies)
 
     with tempfile.TemporaryDirectory() as destination:
         session.run(
