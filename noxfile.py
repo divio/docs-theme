@@ -42,6 +42,9 @@ def docs_live(session):
     _install_this_project_with_flit(session, extras=["doc"], editable=True)
     session.install("sphinx-autobuild", *additional_dependencies)
     session.install("divio-cli", *additional_dependencies)
+    session.install("myst_parser", *additional_dependencies)
+    session.install("sphinx_copybutton", *additional_dependencies)
+    session.install("sphinx_inline_tabs", *additional_dependencies)
 
     with tempfile.TemporaryDirectory() as destination:
         session.run(
