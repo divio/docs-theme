@@ -1,0 +1,4 @@
+[submodule "docs-divio"]
+	path = docs-divio
+	url = git@gitlab.com:divio/cloud/divio-cloud-docs.git
+	branch = master
