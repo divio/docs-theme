@@ -21,19 +21,15 @@ jobs:
       - name: Generate final distribution
         run: python -m build
 
-      - name: Get the release version
-        id: version
-        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
-
       # Upload to GitHub Actions artifacts
       - uses: actions/upload-artifact@v2
         with:
           name: sdist
-          path: dist/furo-${{ steps.version.outputs.VERSION }}.tar.gz
+          path: dist/furo-*.tar.gz
       - uses: actions/upload-artifact@v2
         with:
           name: wheel
-          path: dist/furo-${{ steps.version.outputs.VERSION }}-py3-none-any.whl
+          path: dist/furo-*-py3-none-any.whl
 
   upload:
     runs-on: ubuntu-latest
@@ -49,10 +45,6 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: wheel
-
-      - name: Get the release version
-        id: version
-        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
 
       - name: Create the GitHub release
         id: create_release
@@ -71,8 +63,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/furo-${{ steps.version.outputs.VERSION }}.tar.gz
-          asset_name: furo-${{ steps.version.outputs.VERSION }}.tar.gz
+          asset_path: dist/furo-*.tar.gz
           asset_content_type: application/x-gzip
 
       - name: Upload wheel to GitHub
@@ -81,8 +72,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/furo-${{ steps.version.outputs.VERSION }}-py3-none-any.whl
-          asset_name: furo-${{ steps.version.outputs.VERSION }}-py3-none-any.whl
+          asset_path: dist/furo-*-py3-none-any.whl
           asset_content_type: application/zip
 
       - name: Upload both to TestPyPI

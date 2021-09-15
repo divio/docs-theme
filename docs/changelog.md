@@ -1,5 +1,81 @@
 # Changelog
 
+<!--
+
+Version codenames style: {adjective} {colorname}
+
+https://patternbasedwriting.com/elementary_writing_success/list-4800-adjectives/
+https://en.wikipedia.org/wiki/Lists_of_colors
+
+-->
+
+## 2021.09.08 -- Balmy Blue
+
+- Prevent screen-reader-only content from showing up in Sphinx search results.
+- Improve support for various footer configurations.
+
+## 2021.08.31 -- Aspiring Avocado
+
+- First stable release! 🎉
+- Document stability policy.
+- Tweak API styling selectors.
+- Drop reference to no-longer-used `pygments_dark.css`.
+- Eagerly set the light/dark mode theme, when loading a page.
+
+## 2021.08.17.beta43
+
+- Add support for sphinx-design.
+- Document sidebar title customization.
+- Don't show "Contents" on pages without h1 headings.
+- Add border to inline code, to improve contrast.
+- Reduce contrast on dark-mode text.
+
+## 2021.08.11.beta42
+
+- Fix esoteric failure due to inability to write pygments.css.
+- Improve overscroll behaviour.
+
+## 2021.07.31.beta41
+
+- Adapt for newer sphinx-copybutton design
+- Improved screen reader experience
+- Bring back asset digests, to avoid caching-related issues
+
+## 2021.07.28.beta40
+
+- Add spacing around light theme / dark theme / auto theme toggle.
+
+## 2021.07.28.beta39
+
+- Site visitors can now force light theme / dark theme, independently of browser settings. 🎉
+- Rework handling of dark theme code block highlighting.
+- "Hide Search Matches" shows up in the sidebar, when the user has search matches highlighted.
+- Search term highlights are only shown in the page content.
+- Fix styling for default aligned tables.
+- Enable smooth scrolling.
+- meta: Upgrade NodeJS packages and start using Babel.
+- meta: Rework organisation of various user-facing CSS variables.
+
+## 2021.07.05.beta38
+
+- Fix image alignment in Sphinx 4.
+
+## 2021.06.24.beta37
+
+- Require Sphinx 4.
+- Rework CSS/JS asset inclusion, to work better with Sphinx 4.
+- Document how to add a custom admonition style.
+
+## 2021.06.18.beta36
+
+- Fix dark mode highlighting in Sphinx 4.
+
+## 2021.06.18.beta35
+
+- Allow use with Sphinx 4.
+- Fix right alignment of viewcode links, when used with certain API
+  signatures.
+
 ## 2021.04.11.beta34
 
 - Account for even more variants of sidebar-caption HTML.

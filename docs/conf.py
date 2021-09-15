@@ -3,6 +3,13 @@
 # Full list of options can be found in the Sphinx documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
+import sys
+
+# add the demo python code to the path, so that it can be used to demonstrate
+# source links
+sys.path.append(os.path.abspath("./kitchen-sink/demo_py"))
+
 #
 # -- Project information -----------------------------------------------------
 #
@@ -28,6 +35,7 @@ extensions = [
     # External stuff
     "myst_parser",
     "sphinx_copybutton",
+    "sphinx_design",
     "sphinx_inline_tabs",
 ]
 templates_path = ["_templates"]
@@ -67,5 +75,7 @@ myst_heading_anchors = 3
 
 html_theme = "furo"
 html_title = "Furo"
+language = "en"
 
 html_static_path = ["_static"]
+html_css_files = ["pied-piper-admonition.css"]
