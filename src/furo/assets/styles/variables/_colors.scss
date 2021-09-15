@@ -10,9 +10,9 @@
   --color-problematic: #b30000;
 
   // Base Colors
-  --color-foreground-primary: black; // for main text and headings
+  --color-foreground-primary: #1a406b; // for main text and headings
   --color-foreground-secondary: #5a5c63; // for secondary text
-  --color-foreground-muted: #646776; // for muted text
+  --color-foreground-muted: #72747e; // for muted text
   --color-foreground-border: #878787; // for content borders
 
   --color-background-primary: white; // for content
@@ -26,8 +26,8 @@
   --color-announcement-text: #eeebee;
 
   // Brand colors
-  --color-brand-primary: #2962ff;
-  --color-brand-content: #2a5adf;
+  --color-brand-primary: #00bbff;
+  --color-brand-content: #00bbff;
 
   // API documentation
   --color-api-overall: var(--color-foreground-muted);
@@ -76,7 +76,7 @@
   --color-sidebar-brand-text: var(--color-foreground-primary);
   --color-sidebar-caption-text: var(--color-foreground-muted);
   --color-sidebar-link-text: var(--color-foreground-secondary);
-  --color-sidebar-link-text--top-level: var(--color-brand-primary);
+  --color-sidebar-link-text--top-level: var(--color-foreground-primary);
 
   --color-sidebar-item-background: var(--color-sidebar-background);
   --color-sidebar-item-background--current: var(

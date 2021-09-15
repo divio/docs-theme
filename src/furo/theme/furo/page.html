@@ -65,24 +65,21 @@
     <div class="content">
       {% include "divio/breadcrumbs.html" %}
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
-        </div>
         <article role="main">
-          <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
+          <div class="content-icon-container">
+            <div class="theme-toggle-container theme-toggle-content">
+              <button class="theme-toggle">
+                <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+                <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+                <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+                <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+              </button>
+            </div>
+            <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+              <div class="visually-hidden">Toggle table of contents sidebar</div>
+              <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            </label>
+          </div>
           {% block content %}{{ body }}{% endblock %}
         </article>
       </div>
@@ -133,15 +130,6 @@
             {%- if show_copyright %} | {%- endif %}
             {% trans last_updated=last_updated|e -%}
               Last updated on {{ last_updated }}.
-            {%- endtrans %}
-          {%- endif %}
-          {%- if show_sphinx %}
-            {%- if show_copyright or last_updated %} | {%- endif %}
-            {% trans -%}
-              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             {%- endtrans %}
           {%- endif %}
           {%- if show_source and has_source and sourcename %}
