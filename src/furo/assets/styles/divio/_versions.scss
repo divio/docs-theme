@@ -50,11 +50,11 @@
 
   dd a {
     color: var(--color-brand-primary) !important;
-    
+
     &:hover,
     &:active,
     &:focus {
-      color: var(--color-link--hover) !important
+      color: var(--color-link--hover) !important;
     }
   }
 
@@ -88,16 +88,16 @@
     background-color: #e74c3c;
     color: #fff;
   }
-  
+
   .rst-current-version.rst-active-old-version {
     background-color: #f1c40f;
     color: #000;
   }
-  
+
   &.shift-up .rst-other-versions {
     display: block;
   }
-  
+
   .rst-other-versions {
     font-size: 14px;
     color: gray;
@@ -119,20 +119,20 @@
   .rst-other-versions hr {
     display: none;
   }
-  
+
   .rst-other-versions dd {
     display: inline-block;
     margin: 0;
   }
-  
+
   .rst-other-versions dt + dd {
     margin-left: -6px;
   }
-  
+
   .rst-other-versions dt + strong {
     margin-left: -6px;
   }
-  
+
   .rst-other-versions dd a {
     display: inline-block;
     padding: 6px;

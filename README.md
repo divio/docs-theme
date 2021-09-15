@@ -2,7 +2,6 @@
 
 This project is based on the [furo](https://github.com/pradyunsg/furo) theme.
 
-
 ## Installation
 
 Make sure you have a **virtual environment activated**.
