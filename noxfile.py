@@ -85,7 +85,7 @@ def lint(session):
     if "CI" in os.environ:
         args.append("--show-diff-on-failure")
 
-    session.run("pre-commit", "run", "--all-files", *args)
+    session.run("pre-commit", "run", *args)
 
 
 @nox.session

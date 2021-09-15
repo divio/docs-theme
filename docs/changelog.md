@@ -1,5 +1,71 @@
 # Changelog
 
+## 2021.04.11.beta34
+
+- Account for even more variants of sidebar-caption HTML.
+
+## 2021.04.11.beta33
+
+- Another styling update sidebar-caption related changes in Sphinx.
+
+## 2021.04.11.beta32
+
+- Add a basic domainindex page, without dedicated styling.
+- Add recommendation for sphinx-opengraph.
+- Account for newer Sphinx versions changing classes for captions.
+- Account for the broken docutils release.
+- Right align viewcode links (like `[source]`) allowing wrapping of API
+  signatures gradefully.
+
+## 2021.03.20.beta31
+
+- Get `pygments_dark_style` working.
+- Use the correct layout for domain index placeholder.
+
+## 2021.03.20.beta30
+
+- Fix a typo in the README.
+- Add an escape hatch for specific table of contents.
+
+## 2021.03.19.beta29
+
+- Update Python-Requires to >=3.6.
+- Account for nested admonitions.
+- Center align items like other themes.
+- Don't stylize the compound `kbd` tags.
+- Fix a broken internal link in documentation.
+- Fix a mistyped vertical-align style.
+- Vertically align embedded-in-text images.
+- Declare in HTML that the theme's pages support multiple color schemes.
+
+## 2021.02.28.beta28
+
+- Fix a bug in how stylesheets are handled.
+- Clarify how to install directly from GitHub.
+- Document how to install from git.
+
+## 2021.02.28.beta27
+
+- Center figures and legends with `margin: auto`.
+- Improve compatibility with `json` builder, by not passing functions into the
+  Jinja templates.
+- Add a friendly comment to `domainindex.html`, about it not being implemented.
+- Add styling for GUI labels.
+
+## 2021.02.27.beta26
+
+- Fix wrong height on wide screens, for pages with a tall sidebar but not-tall
+  content.
+- Add type annotations to the codebase! 🎉
+- Fix an instance of missing brackets in documentation.
+
+## 2021.02.21.beta25
+
+- Document how to inject custom code in Sphinx documentation
+- Document that `pygments_dark_style` is Furo-specific
+- Make `sphinx-panels` respond to dark mode with Furo
+- Stop `defer`ing Javascript, which was causing search to break in some cases.
+
 ## 2020.12.30.beta24
 
 - Disable environment caching if `pygments_dark_style` is changed.
