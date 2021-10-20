@@ -4,6 +4,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.content {
+  justify-content: start;
+}
+
 @import "./header";
 @import "./footer";
 @import "./content";
