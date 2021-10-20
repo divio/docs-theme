@@ -97,6 +97,6 @@ hr.docutils {
   min-height: calc(100% - 80px); // substract header and footer
 }
 
-.content > article {
+.content .article-container {
   flex-grow: 1;
 }

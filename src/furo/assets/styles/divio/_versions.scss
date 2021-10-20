@@ -14,13 +14,24 @@
 .rst-versions.rst-badge {
   position: fixed;
   bottom: 0 !important;
-  right: 0 !important;
+  left: -1px !important;
   z-index: 400;
   color: black;
   background: white !important;
   border: 1px solid var(--color-background-border) !important;
-  border-right: none !important;
-  max-width: 150px;
+  border-left: none !important;
+  border-bottom: none !important;
+  width: calc(50% - 19.5em) !important;
+  max-width: 100% !important;
+  min-width: 15em !important;
+
+  @media screen and (min-width: 1330px) {
+    width: calc(50% - 27em) !important;
+  }
+
+  @media screen and (max-width: 1090px) {
+    display: none !important;
+  }
 
   .rst-other-versions {
     color: var(--color-foreground-muted) !important;
@@ -70,7 +81,7 @@
   .rst-current-version {
     color: var(--color-foreground-muted) !important;
     font-size: 14px !important;
-    padding: 13px 50px !important;
+    padding: 11px 50px 12px !important;
     display: flex !important;
     text-align: right !important;
     cursor: pointer;
