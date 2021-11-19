@@ -16,8 +16,8 @@
   bottom: 0 !important;
   left: -1px !important;
   z-index: 400;
-  color: black;
-  background: white !important;
+  color: var(--color-announcement-background);
+  background: var(--color-background-primary) !important;
   border: 1px solid var(--color-background-border) !important;
   border-left: none !important;
   border-bottom: none !important;
@@ -38,7 +38,7 @@
     font-size: 14px !important;
     display: block;
     padding: 0 20px;
-    background: white;
+    background: var(--color-background-primary);
     padding-bottom: 20px !important;
   }
 
@@ -55,7 +55,7 @@
   }
 
   dt {
-    color: black;
+    color: var(--color-content-foreground);
     font-weight: 600;
   }
 
@@ -70,7 +70,7 @@
   }
 
   a {
-    color: #2980b9;
+    color: var(--color-brand-primary);
     text-decoration: none;
   }
 
@@ -89,7 +89,7 @@
     justify-content: space-between;
     z-index: 999;
     position: relative;
-    background: white !important;
+    background: var(--color-background-primary) !important;
   }
   .rst-current-version .fa {
     font-size: 12px;
@@ -97,12 +97,12 @@
 
   .rst-current-version.rst-out-of-date {
     background-color: #e74c3c;
-    color: #fff;
+    color: var(--color-brand-primary);
   }
 
   .rst-current-version.rst-active-old-version {
-    background-color: #f1c40f;
-    color: #000;
+    background-color: var(--color-announcement-text);
+    color: var(--color-announcement-background);
   }
 
   &.shift-up .rst-other-versions {
@@ -111,7 +111,7 @@
 
   .rst-other-versions {
     font-size: 14px;
-    color: gray;
+    color: var(--color-foreground-muted);
     display: none;
     font-family: "Nunito", sans-serif;
   }
@@ -147,7 +147,7 @@
   .rst-other-versions dd a {
     display: inline-block;
     padding: 6px;
-    color: black;
+    color: var(--color-announcement-background);
   }
 }
 
@@ -177,7 +177,7 @@
 .rst-versions .rst-current-version .rst-content code.download span:first-child,
 .rst-content code.download .rst-versions .rst-current-version span:first-child,
 .rst-versions .rst-current-version .icon {
-  color: black;
+  color: var(--color-content-foreground);
 }
 
 @media screen and (max-width: 768px) {
