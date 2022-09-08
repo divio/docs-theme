@@ -27,11 +27,15 @@
         {%- if prev -%}
           <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
         {%- endif -%}
+        {#- rel="canonical" (set by html_baseurl) -#}
+        {%- if pageurl %}
+        <link rel="canonical" href="{{ pageurl|e }}" />
+        {%- endif %}
     {%- endblock linktags %}
 
     {# Favicon #}
-    {%- if favicon -%}
-      <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+    {%- if favicon_url -%}
+      <link rel="shortcut icon" href="{{ favicon_url }}"/>
     {%- endif -%}
 
     {#- Generator banner -#}
@@ -41,7 +45,9 @@
 
     {#- Site title -#}
     {%- block htmltitle -%}
-      {% if pagename == master_doc %}
+      {% if not docstitle %}
+        <title>{{ title|striptags|e }}</title>
+      {% elif pagename == master_doc %}
         <title>{{ docstitle|striptags|e }}</title>
       {% else %}
         <title>{{ title|striptags|e }} - {{ docstitle|striptags|e }}</title>
@@ -63,8 +69,6 @@
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
     {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
 
@@ -76,14 +80,15 @@
     {#- Custom front matter #}
     {%- block extrahead -%}{%- endblock -%}
   </head>
-  <body dir="{{ direction }}">
+  <body>
+    {% include "divio/header.html" %}
+    {% block body %}
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
-    {% include "divio/header.html" %}
-
-    {% block body %}{% endblock %}
+    {% endblock %}
     {% include "divio/footer.html" %}
+    {# include "partials/_rtd.html" with context #}
 
     {%- block scripts -%}
 
@@ -97,7 +102,6 @@
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
     {%- endblock -%}
-    {# include "partials/_rtd.html" with context #}
 
     {%- endblock scripts -%}
   </body>

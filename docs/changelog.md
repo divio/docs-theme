@@ -9,6 +9,139 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.06.21 -- Opulent Opal
+
+- Fix `docutils <= 0.17.x` compatibility
+- Bump to the latest Node.js LTS
+
+## 2022.06.04.1 -- Naughty Nickel bugfix
+
+- Fix the URL used in the "Edit this page" for Read the Docs builds.
+
+## 2022.06.04 -- Naughty Nickel
+
+- ✨ Advertise Sphinx 5 compatibility.
+- ✨ Change to `basic-ng` as the base theme (from {pypi}`sphinx-basic-ng`).
+- Document site-wide announcement banners.
+- Drop the pin on pygments.
+- Improve edit button, using `basic-ng`'s `edit-this-page` component.
+- Tweak headings to better match what users expect.
+- Tweak how Sphinx's default HTML is rendered, using docutils post-transforms (this replaces parsing+modifying it with BeautifulSoup).
+- When built with docutils 0.18, footnotes are rendered differently and stylised differently in Furo.
+
+## 2022.04.07 -- Magical Mauve
+
+- ✨ Make sphinx-copybutton look better.
+- Add margin to indentations in line blocks.
+- Add styling for non-arabic list styles
+- Add support for `html_baseurl`.
+- Improve "Edit this page" icon to be more accessible.
+- Improve `html_sidebars` example.
+- Tweak positioning of back to top on desktop.
+
+## 2022.03.04 -- Lucent Lilac
+
+- Improve support for print media.
+- Reduce heading sizes for h3 and below.
+- Don't allow selecting headerlink content.
+- Improve how overflow wrapping is handled.
+- Add a reference from the configuration variables to the color customisation page.
+
+## 2022.02.23 -- Keen Kobi
+
+- ✨ Add a "Back to Top" button that shows up when scrolling up.
+- Add a URL to GitHub in Project-URLs.
+- Break long words in the prev/next buttons.
+- Fix includes in Kitchen sink.
+- Handle external references for viewcode links.
+- Properly offset scrollspy.
+- Switch from `optional-dependencies` (AKA extras) to dedicated `requirements.txt` files.
+
+## 2022.02.14.1 -- Jazzy Jasmine (bugfix)
+
+- Drop a `, /` for positional-only arguments.
+
+## 2022.02.14 -- Jazzy Jasmine
+
+- ✨ Rework typography, pivoting to bold headings.
+- ✨ Redesign the footer and allow footer icons.
+- ✨ Change the default permalinks icon.
+- ✨ Add an edit button for RTD-built pages.
+- ✨ Better integration of Read the Docs' embed.
+- Add dedicated headings for each admonition type.
+- Add the green border for `sphinx-copybutton` after copy.
+- Bump to the latest Node.js LTS.
+- Don't set `display: block` on visible `only-*` elements. (for sphinx-design)
+- Improve footnote styling.
+- Improve styling for `div.math` equation numbers.
+- Rework how `:target` links are handled.
+- Stylise `small` tag.
+- Stylise code block captions.
+- Stylise various forms of blockquotes.
+- Treat all custom code injection as unstable.
+- Tweak admonition spacing.
+- Tweak how muted-links are presented.
+- Use a better color for hovered tabs, with sphinx-inline-tabs.
+- Use higher specificity for hiding elements. (for sphinx-design)
+- Use the modern Firefox focus ring.
+
+## 2022.01.02 -- Immaculate Indigo
+
+- Improve colours for `sphinx-inline-tabs`.
+- Improve highlighting of active definition list targets.
+- Improve error message when `html_style` is set.
+- Update workflow to reflect reality.
+- Be more selective about API documentation headings.
+- Increase specificity of `pre` selector for line-height.
+
+## 2021.11.23 -- Hearty Honeydew
+
+- Improve code block styling.
+- Explicitly declare compatibility constraints for pygments.
+- Break words in API documentation, when the words are too long.
+- Drop the `def ` on function and method signatures.
+- Reduce the font-weight in `sig-prename`.
+
+## 2021.11.16 -- Grumpy Ghost
+
+- Fix a typo, that broke the sidebar highlight logic.
+
+## 2021.11.15 -- Fearless Fawn
+
+- Tweak API documentation presentation to match pdoc3's style.
+- Bring back browser-specific prefixes, for compatibility.
+
+## 2021.11.12.1 -- Enamoured Emerald bugfix
+
+- Fix RECORD file contents.
+
+## 2021.11.12 -- Enamoured Emerald
+
+- Adopt `sphinx-theme-builder`, which runs the JS-based asset build process during the regular Python build process.
+- Rework the build pipeline to be webpack-based.
+- Tweak colours in dark mode.
+- Present better error messages on misconfiguration.
+- Tweak presentation of blockquotes, to be more visually distinct.
+- Stylize topics like admonitions, as specified in the reStructuredText spec.
+- Handle long single words in the sidebar.
+- Only hide Sphinx from the footer, when `show_sphinx` is set to `False`.
+
+## 2021.10.09 -- Delicate Dandelion
+
+- Add a bit more space below content icon container.
+- Add CSS variables for table header background and table border.
+- Fix behaviour of URL-style references in `html_logo` and `html_favicon`.
+- Improve selector for embedded-in-text images.
+- Improve the contrast ratios in API documentation.
+
+## 2021.09.22 -- Cavalier Canary
+
+- Restyle API documentation signatures, to have a background and use monospace fonts.
+- Reduce spacing for items in API documentation.
+- Improve the presentation of links in site-wide announcement.
+- Only add a border on code inside paragraphs.
+- Use `noscript` for presenting "search needs JS" message.
+
 ## 2021.09.08 -- Balmy Blue
 
 - Prevent screen-reader-only content from showing up in Sphinx search results.
@@ -218,7 +351,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 - Tweak bottom spacing on right sidebar.
 - Tweak CSS and JS blocks in `base.html` template.
 - Tweak how captions for toctrees look.
-- Tweak spacing on sidebar ad on ReadTheDocs.
+- Tweak spacing on sidebar ad on Read the Docs.
 
 ## 2020.11.10.beta15
 
@@ -275,7 +408,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 - Add more information in the documentation (reference and customisation).
 - Add sourcemaps in the generated distribution.
 - Add support for glossary lists.
-- Drop the custom ReadTheDocs-specific CSS.
+- Drop the custom Read the Docs-specific CSS.
 - Fix bad transparency handling for sidebar hover on Safari.
 - Fix shrinking of sidebar brand image on Safari.
 - Tweak spacing in admonitions.
@@ -328,11 +461,11 @@ This release was not correctly versioned and is not installed preferentially ove
 - Fix next/prev links flowing into one-another by limiting width to 50%.
 - Fix positioning of collapsed contents sidebar icon.
 - Fix shrinking arrows in next/prev links.
-- Include `basic` theme's JS files unconditionally. This should help with compatibility with various Sphinx extensions and ReadTheDocs.
+- Include `basic` theme's JS files unconditionally. This should help with compatibility with various Sphinx extensions and Read the Docs.
 - Make `math` elements scrollable, when wider than the page.
 - Tweak images to be responsive.
 - Tweak spacing of paragraphs.
-- Tweak location of ReadTheDocs' injected version helper.
+- Tweak location of Read the Docs' injected version helper.
 
 ## 2020.9.8.beta4
 
