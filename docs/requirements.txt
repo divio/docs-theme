@@ -10,3 +10,4 @@ myst-parser
 sphinx-copybutton
 sphinx-click
 sphinx-notfound-page
+sphinxcontrib-mermaid

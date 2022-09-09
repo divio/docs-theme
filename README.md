@@ -6,14 +6,7 @@ This project is based on the [furo](https://github.com/pradyunsg/furo) theme.
 
 Make sure you have a **virtual environment activated**:
 
-- `nvm use 16`
-- `npm install`
-- `pip install nox`
 - `git submodule update --init`
-
-## Usage
-
-Make sure you have a **virtual environment activated**:
-
-- `nox -s docs-live` to start the local development server
+- `pip install nox`
+- `nox -s divio-docs` to start the local development server
 - `nox -s lint` to run linting
