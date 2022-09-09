@@ -6,29 +6,46 @@
 //
 // `colors-dark` depends on `colors` being included at a lower specificity.
 
+$white: #fff;
+$gray-100: #f4f4f4;
+$gray-200: #dddedf;
+$gray-300: #c9cccd;
+$gray-400: #a2a7a8;
+$gray-600: #5a6162;
+$gray-800: #3b4446;
+$gray-900: #152022;
+$black: #000;
+
+$primary: #dfff67;
+$secondary: #3c40f5;
+$success: #96b236;
+$warning: #ffa33d;
+$danger: #f00;
+$body-bg-light: #f5f7f8;
+
 @mixin colors {
-  --color-problematic: #b30000;
+  --color-problematic: #{$danger};
 
   // Base Colors
-  --color-foreground-primary: black; // for main text and headings
-  --color-foreground-secondary: #5a5c63; // for secondary text
-  --color-foreground-muted: #646776; // for muted text
-  --color-foreground-border: #878787; // for content borders
+  --color-foreground-primary: #{$black}; // for main text and headings
+  --color-foreground-secondary: #{$gray-800}; // for secondary text
+  --color-foreground-muted: #{$gray-600}; // for muted text
+  --color-foreground-border: #{$gray-400}; // for content borders
 
-  --color-background-primary: white; // for content
-  --color-background-secondary: #f8f9fb; // for navigation + ToC
-  --color-background-hover: #efeff4ff; // for navigation-item hover
-  --color-background-hover--transparent: #efeff400;
-  --color-background-border: #eeebee; // for UI borders
-  --color-background-item: #ccc; // for "background" items (eg: copybutton)
+  --color-background-primary: #{$white}; // for content
+  --color-background-secondary: #{$body-bg-light}; // for navigation + ToC
+  --color-background-hover: #{$gray-100}; // for navigation-item hover
+  --color-background-hover--transparent: #{$gray-800};
+  --color-background-border: #{$gray-200}; // for UI borders
+  --color-background-item: #{$gray-400}; // for "background" items (eg: copybutton)
 
   // Announcements
-  --color-announcement-background: #000000dd;
-  --color-announcement-text: #eeebee;
+  --color-announcement-background: #{$gray-800};
+  --color-announcement-text: #{$gray-300};
 
   // Brand colors
-  --color-brand-primary: #2962ff;
-  --color-brand-content: #2a5adf;
+  --color-brand-primary: #{$secondary};
+  --color-brand-content: #{$secondary};
 
   // API documentation
   --color-api-background: var(--color-background-secondary);
@@ -38,18 +55,18 @@
   --color-api-pre-name: var(--color-problematic);
   --color-api-paren: var(--color-foreground-secondary);
   --color-api-keyword: var(--color-foreground-primary);
-  --color-highlight-on-target: #ffffcc;
+  --color-highlight-on-target: #{$white};
 
   // Inline code background
   --color-inline-code-background: var(--color-background-secondary);
 
   // Highlighted text (search)
-  --color-highlighted-background: #ddeeff;
+  --color-highlighted-background: #{$gray-300};
   --color-highlighted-text: var(--color-foreground-primary);
 
   // GUI Labels
-  --color-guilabel-background: #ddeeff80;
-  --color-guilabel-border: #bedaf580;
+  --color-guilabel-background: #{$gray-600};
+  --color-guilabel-border: #{$gray-800};
   --color-guilabel-text: var(--color-foreground-primary);
 
   // Admonitions!
@@ -126,7 +143,7 @@
 }
 
 @mixin colors-dark {
-  --color-problematic: #ee5151;
+  --color-problematic: #{$danger};
 
   // Base Colors
   --color-foreground-primary: #ffffffcc; // for main text and headings
