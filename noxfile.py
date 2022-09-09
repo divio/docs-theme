@@ -6,7 +6,7 @@ import os
 
 import nox
 
-PACKAGE_NAME = "furo"
+PACKAGE_NAME = "divio-docs"
 nox.options.sessions = ["lint", "test"]
 
 
@@ -71,7 +71,6 @@ def docs(session):
 
     # Generate documentation into `build/docs`
     session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
-
 
 @nox.session(name="docs-live", reuse_venv=True)
 def docs_live(session):
