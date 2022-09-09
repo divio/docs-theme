@@ -154,14 +154,6 @@ function setupTheme() {
   });
 }
 
-function setupTheme() {
-  // Attach event handlers for toggling themes
-  const buttons = document.getElementsByClassName("theme-toggle");
-  Array.from(buttons).forEach((btn) => {
-    btn.addEventListener("click", cycleThemeOnce);
-  });
-}
-
 function setup() {
   setupTheme();
   setupScrollHandler();
