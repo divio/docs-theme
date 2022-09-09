@@ -96,7 +96,7 @@
   }
 
   .rst-current-version.rst-out-of-date {
-    background-color: #e74c3c;
+    background-color: var(--color-problematic);
     color: var(--color-brand-primary);
   }
 
@@ -113,7 +113,6 @@
     font-size: 14px;
     color: var(--color-foreground-muted);
     display: none;
-    font-family: "Nunito", sans-serif;
   }
   .rst-other-versions .rst-other-versions {
     padding: 20px !important;
@@ -123,7 +122,6 @@
     display: none !important;
   }
   .rst-other-versions dl {
-    font-family: "Nunito", sans-serif;
     font-size: 14px;
     line-height: 20px;
   }

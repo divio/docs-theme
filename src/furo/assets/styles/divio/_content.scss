@@ -62,14 +62,14 @@ dfn {
 }
 
 ins {
-  background: #ff9;
-  color: #000;
+  background: var(--color-highlight-on-target);
+  color: var(--color-foreground-primary);
   text-decoration: none;
 }
 
 mark {
-  background: #ff0;
-  color: #000;
+  background: var(--color-highlight-on-target);
+  color: var(--color-foreground-primary);
   font-style: italic;
   font-weight: 600;
 }
