@@ -34,7 +34,7 @@ $body-bg-light: #f5f7f8;
 
   --color-background-primary: #{$white}; // for content
   --color-background-secondary: #{$body-bg-light}; // for navigation + ToC
-  --color-background-hover: #{$gray-100}; // for navigation-item hover
+  --color-background-hover: #{$gray-300}; // for navigation-item hover
   --color-background-hover--transparent: #{$gray-800};
   --color-background-border: #{$gray-200}; // for UI borders
   --color-background-item: #{$gray-400}; // for "background" items (eg: copybutton)
@@ -106,12 +106,7 @@ $body-bg-light: #f5f7f8;
   --color-sidebar-item-background--current: var(
     --color-sidebar-item-background
   );
-  --color-sidebar-item-background--hover: linear-gradient(
-    90deg,
-    var(--color-background-hover--transparent) 0%,
-    var(--color-background-hover) var(--sidebar-item-spacing-horizontal),
-    var(--color-background-hover) 100%
-  );
+  --color-sidebar-item-background--hover: var(--color-background-hover);
 
   --color-sidebar-item-expander-background: transparent;
   --color-sidebar-item-expander-background--hover: var(
