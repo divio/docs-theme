@@ -6,13 +6,7 @@
       </a>
     </div>
     <div class="divio-header__claim">
-      {% if not docstitle %}
-        {{ title|striptags|e }}
-      {% elif pagename == master_doc %}
         {{ docstitle|striptags|e }}
-      {% else %}
-        {{ title|striptags|e }} - {{ docstitle|striptags|e }}
-      {% endif %}
     </div>
   </div>
 </div>

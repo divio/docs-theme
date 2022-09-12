@@ -535,7 +535,7 @@ body {
   --color-content-foreground: var(--color-foreground-primary);
   --color-content-background: transparent;
   --color-link: var(--color-brand-content);
-  --color-link--hover: var(--color-brand-content);
+  --color-link--hover: $secondary-hover;
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
 }
@@ -2422,11 +2422,11 @@ html {
 
 .divio-header__inner {
   box-sizing: border-box;
-  height: 76px;
+  min-height: 76px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0 15px;
   margin: 0 auto;
   font-size: 14px;
   line-height: 21/14;
@@ -2439,9 +2439,9 @@ html {
     width: 1440px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1072px) {
   .divio-header__inner {
-    padding: 30px 50px;
+    justify-content: flex-start;
   }
 }
 
@@ -2467,6 +2467,11 @@ html {
   font-size: 21px;
   line-height: 24px;
   padding-left: 50px;
+}
+@media (max-width: 1072px) {
+  .divio-header__claim {
+    display: none;
+  }
 }
 
 .related-information {
@@ -2626,6 +2631,10 @@ hr.docutils {
   margin-top: -22px;
 }
 
+.tab-content {
+  padding-top: 20px;
+}
+
 @media (max-width: 1104px) {
   .sidebar-drawer {
     z-index: 1001;
@@ -2654,8 +2663,26 @@ hr.docutils {
 
 .sidebar-search {
   border: 1px solid var(--color-background-border);
-  border-right: 0;
   border-radius: 2px 0 0 2px;
+}
+@media (min-width: 1072px) {
+  .sidebar-search {
+    border-right: 1px solid var(--color-background-primary);
+    position: relative;
+    left: 1px;
+    top: -1px;
+  }
+}
+
+.toc-drawer {
+  z-index: 1000;
+}
+
+@media (max-width: 1071px) {
+  .theme-toggle-header {
+    position: absolute;
+    right: 30px;
+  }
 }
 
 .breadcrumbs {
@@ -2782,12 +2809,12 @@ hr.docutils {
   text-align: center;
   padding: 10px 20px;
   border-radius: 3px;
-  border: 1px solid var(--color-foreground-primary);
   background-color: var(--color-foreground-primary);
   transition: all 0.15s ease-in-out;
 }
 .btn:hover, .btn:active, .btn:focus {
-  background-color: var(--color-background-secondary);
+  color: var(--color-background-primary);
+  background-color: var(--color-brand-primary);
 }
 
 .btn-small {

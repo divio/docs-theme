@@ -18,6 +18,7 @@ $black: #000;
 
 $primary: #dfff67;
 $secondary: #3c40f5;
+$secondary-hover: #0b10d9;
 $success: #96b236;
 $warning: #ffa33d;
 $danger: #f00;
@@ -132,7 +133,7 @@ $body-bg-light: #f5f7f8;
 
   // Links
   --color-link: var(--color-brand-content);
-  --color-link--hover: var(--color-brand-content);
+  --color-link--hover: $secondary-hover;
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
 }
