@@ -5,8 +5,8 @@
 // but %age is easier to reason about for me.
 
 @mixin fonts {
-  --font-stack: "Helvetica Neue", Helvetica, Arial,
-    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  --font-stack: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans,
+                "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;;
   --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, Monaco,
     Liberation Mono, Lucida Console, monospace;
 

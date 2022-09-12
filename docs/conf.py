@@ -107,7 +107,7 @@ if "READTHEDOCS" in os.environ:
 
 html_js_files = []
 html_context: Dict[str, Any] = {}
-# html_show_sphinx = False
+html_show_sphinx = False
 # html_show_copyright = False
 # html_last_updated_fmt = ""
 
