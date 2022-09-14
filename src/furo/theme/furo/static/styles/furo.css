@@ -556,7 +556,7 @@ html body .only-dark {
     --color-foreground-muted: #a2a7a8;
     --color-foreground-border: #5a6162;
     --color-background-primary: #131416;
-    --color-background-secondary: #1a1c1e;
+    --color-background-secondary: #202020;
     --color-background-hover: #131416;
     --color-background-hover--transparent: #131416;
     --color-background-border: #3b4446;
@@ -588,7 +588,7 @@ html body .only-dark {
       --color-foreground-muted: #a2a7a8;
       --color-foreground-border: #5a6162;
       --color-background-primary: #131416;
-      --color-background-secondary: #1a1c1e;
+      --color-background-secondary: #202020;
       --color-background-hover: #131416;
       --color-background-hover--transparent: #131416;
       --color-background-border: #3b4446;
