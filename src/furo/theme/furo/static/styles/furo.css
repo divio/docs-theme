@@ -535,7 +535,7 @@ body {
   --color-content-foreground: var(--color-foreground-primary);
   --color-content-background: transparent;
   --color-link: var(--color-brand-content);
-  --color-link--hover: $secondary-hover;
+  --color-link--hover: #0b10d9;
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
 }
@@ -551,7 +551,7 @@ html body .only-dark {
 @media not print {
   body[data-theme=dark] {
     --color-problematic: #f00;
-    --color-foreground-primary: #ffffffcc;
+    --color-foreground-primary: #d2d2d2;
     --color-foreground-secondary: #9ca0a5;
     --color-foreground-muted: #81868d;
     --color-foreground-border: #666666;
@@ -563,8 +563,8 @@ html body .only-dark {
     --color-background-item: #444;
     --color-announcement-background: #000000dd;
     --color-announcement-text: #eeebee;
-    --color-brand-primary: #2b8cee;
-    --color-brand-content: #368ce2;
+    --color-brand-primary: #7275f8;
+    --color-brand-content: #7275f8;
     --color-highlighted-background: #083563;
     --color-guilabel-background: #08356380;
     --color-guilabel-border: #13395f80;
@@ -584,7 +584,7 @@ html body .only-dark {
   @media (prefers-color-scheme: dark) {
     body:not([data-theme=light]) {
       --color-problematic: #f00;
-      --color-foreground-primary: #ffffffcc;
+      --color-foreground-primary: #d2d2d2;
       --color-foreground-secondary: #9ca0a5;
       --color-foreground-muted: #81868d;
       --color-foreground-border: #666666;
@@ -596,8 +596,8 @@ html body .only-dark {
       --color-background-item: #444;
       --color-announcement-background: #000000dd;
       --color-announcement-text: #eeebee;
-      --color-brand-primary: #2b8cee;
-      --color-brand-content: #368ce2;
+      --color-brand-primary: #7275f8;
+      --color-brand-content: #7275f8;
       --color-highlighted-background: #083563;
       --color-guilabel-background: #08356380;
       --color-guilabel-border: #13395f80;
@@ -2416,7 +2416,7 @@ html {
 
 .divio-header {
   position: relative;
-  z-index: 101;
+  z-index: 11;
   border-bottom: 1px solid var(--color-background-border);
 }
 
@@ -2635,12 +2635,6 @@ hr.docutils {
   padding-top: 20px;
 }
 
-@media (max-width: 1104px) {
-  .sidebar-drawer {
-    z-index: 1001;
-  }
-}
-
 .sidebar-brand {
   display: none;
 }
@@ -2815,6 +2809,10 @@ hr.docutils {
 .btn:hover, .btn:active, .btn:focus {
   color: var(--color-background-primary);
   background-color: var(--color-brand-primary);
+}
+
+.btn + .btn {
+  margin: 5px 0;
 }
 
 .btn-small {

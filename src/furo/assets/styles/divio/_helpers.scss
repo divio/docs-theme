@@ -77,6 +77,10 @@
   }
 }
 
+.btn + .btn {
+  margin: 5px 0;
+}
+
 .btn-small {
   font-size: 16px;
   padding: 5px 10px;
