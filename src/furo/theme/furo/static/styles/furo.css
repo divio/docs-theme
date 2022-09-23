@@ -390,8 +390,9 @@ template {
 }
 
 body {
-  --font-stack: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans,
-                "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
+  --font-stack: "Helvetica Now", "Helvetica Neue", "Helvetica", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, Monaco,
     Liberation Mono, Lucida Console, monospace;
   --font-size--normal: 100%;
@@ -469,7 +470,7 @@ body {
   --color-topic-title: #14B8A6;
   --color-topic-title-background: rgba(20, 184, 166, 0.1);
   --icon-topic-default: var(--icon-pencil);
-  --color-problematic: #f00;
+  --color-problematic: #e20000;
   --color-foreground-primary: #000;
   --color-foreground-secondary: #3b4446;
   --color-foreground-muted: #5a6162;
@@ -550,7 +551,7 @@ html body .only-dark {
 
 @media not print {
   body[data-theme=dark] {
-    --color-problematic: #f00;
+    --color-problematic: #e20000;
     --color-foreground-primary: #d2d2d2;
     --color-foreground-secondary: #a2a7a8;
     --color-foreground-muted: #a2a7a8;
@@ -582,7 +583,7 @@ html body .only-dark {
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme=light]) {
-      --color-problematic: #f00;
+      --color-problematic: #e20000;
       --color-foreground-primary: #d2d2d2;
       --color-foreground-secondary: #a2a7a8;
       --color-foreground-muted: #a2a7a8;
@@ -2412,6 +2413,30 @@ html {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: "Helvetica Now";
+  src: url(../34ba7f8bf2683405f1b1.woff2) format("woff2"), url(../60bba0bf1344e9f6a0e3.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica Now";
+  src: url(../3600900b3e161dbba509.woff2) format("woff2"), url(../c430eb2162b59307b11e.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica Now";
+  src: url(../2044bef5d934c43c050c.woff2) format("woff2"), url(../3bfdc23a9ec3f87ae4e3.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica Now";
+  src: url(../8c54504e7ac3e3c964e7.woff2) format("woff2"), url(../5eafa0ee20aa05bf4504.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
 .divio-header {
   position: relative;
   z-index: 11;
