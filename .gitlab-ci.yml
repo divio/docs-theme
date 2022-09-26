@@ -7,7 +7,7 @@ build:
   image: python:3.8-alpine
   stage: build
   before_script:
-    - pip install nox
+    - pip install -U nox
   script:
-    - nox -s lint
-    - nox -s docs
+    - nox lint
+    - nox docs
