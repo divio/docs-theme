@@ -5,12 +5,11 @@
 // but %age is easier to reason about for me.
 
 @mixin fonts {
-  // These are adapted from https://systemfontstack.com/
-  --font-stack: Nunito, sans-serif;
-  --font-stack--monospace: "Operator mono", "Hack", "Menlo", Consolas,
-    "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
-    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono",
-    "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  --font-stack: "Helvetica Now", "Helvetica Neue", "Helvetica", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, Monaco,
+    Liberation Mono, Lucida Console, monospace;
 
   --font-size--normal: 100%;
   --font-size--small: 87.5%;
@@ -36,4 +35,7 @@
 
   // Code
   --code-font-size: var(--font-size--small--2);
+
+  // API
+  --api-font-size: var(--font-size--small);
 }

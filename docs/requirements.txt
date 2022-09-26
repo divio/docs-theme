@@ -1,0 +1,13 @@
+myst-parser
+sphinx-copybutton
+sphinx-design
+sphinx-inline-tabs
+sphinx-tabs
+
+# divio custom
+divio-cli
+myst-parser
+sphinx-copybutton
+sphinx-click
+sphinx-notfound-page
+sphinxcontrib-mermaid

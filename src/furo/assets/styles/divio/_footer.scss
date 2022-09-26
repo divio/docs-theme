@@ -46,6 +46,6 @@
   a:hover,
   a:active,
   a:focus {
-    color: #000;
+    color: var(--color-foreground-primary);
   }
 }

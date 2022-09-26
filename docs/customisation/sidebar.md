@@ -2,8 +2,10 @@
 
 Furo supports customising the elements that show up in the navigational sidebar (left). This is to provide documentation authors who are willing to work with HTML/CSS to change and tweak how the sidebar looks.
 
-```{caution}
-This customisation considered "unstable" under Furo's [stability](stablity) policy.
+```{admonition} Unstable
+:class: caution
+
+This customisation considered "unstable" under Furo's {doc}`../stability`.
 
 Furo is not designed to accommodate for all potential custom sidebar designs. It is also possible to get suboptimal results (or even break the layout!) when overriding the default sidebar.
 ```
@@ -62,14 +64,16 @@ This is useful when you want to make drastic or major changes to the design of F
 As an example, to make the _entire_ sidebar scrollable, it is possible to set `sidebar/scroll-start.html` as the first fragment and `sidebar/scroll-end.html` as the last fragment.
 
 ```py
-html_sidebars = [
-    "sidebar/scroll-start.html",
-    "sidebar/brand.html",
-    "sidebar/search.html",
-    "sidebar/navigation.html",
-    "sidebar/ethical-ads.html",
-    "sidebar/scroll-end.html",
-]
+html_sidebars = {
+    "**": [
+        "sidebar/scroll-start.html",
+        "sidebar/brand.html",
+        "sidebar/search.html",
+        "sidebar/navigation.html",
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
+    ]
+}
 ```
 
 ```{warning}
@@ -77,7 +81,7 @@ html_sidebars = [
 ```
 
 ```{tip}
-If you're hosting your documentation on ReadTheDocs, please make sure that `sidebar/ethical-ads.html` is included in the sidebar. This helps keep ReadTheDocs sustainable.
+If you're hosting your documentation on Read the Docs, please make sure that `sidebar/ethical-ads.html` is included in the sidebar. This helps keep Read the Docs sustainable.
 ```
 
 [sphinx-templates_path]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-templates_path

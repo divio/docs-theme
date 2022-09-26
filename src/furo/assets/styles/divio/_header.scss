@@ -1,22 +1,19 @@
 @import "../variables";
 
-$divio-header-height: 40px;
-$divio-transition: all ease-in-out 100ms;
-
 .divio-header {
   position: relative;
-  z-index: 101;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 11;
+  border-bottom: 1px solid var(--color-background-border);
 }
 
 .divio-header__inner {
   box-sizing: border-box;
-  min-height: $divio-header-height + 2 * 20px;
+  min-height: 76px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0 15px;
   margin: 0 auto;
   font-size: 14px;
   line-height: 21/14;
@@ -28,13 +25,8 @@ $divio-transition: all ease-in-out 100ms;
     width: 1440px;
   }
 
-  @media (min-width: 992px) {
-    height: 80px;
-    padding: 30px 50px;
-  }
-
-  @media (max-width: 460px) {
-    min-height: auto;
+  @media (min-width: 1072px) {
+    justify-content: flex-start;
   }
 }
 
@@ -59,107 +51,12 @@ $divio-transition: all ease-in-out 100ms;
   }
 }
 
-.divio-header__nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0;
-  min-height: 40px;
-  padding: 0;
-  left: 0;
-  right: 0;
+.divio-header__claim {
+  font-size: 21px;
+  line-height: 24px;
+  padding-left: 50px;
 
-  @media (min-width: 992px) {
-    position: absolute;
-    top: 50%;
-    margin: -19px 315px 0;
-  }
-
-  @media (max-width: 860px) {
+  @media (max-width: 1072px) {
     display: none;
   }
-}
-
-.divio-header__nav-item {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  text-transform: uppercase;
-
-  display: flex;
-  justify-content: center;
-}
-
-.divio-header__nav-anchor {
-  white-space: nowrap;
-  color: var(--color-foreground-primary);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 21/14;
-  transition: $divio-transition;
-  text-decoration: none;
-  padding: 0 14px;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: var(--color-brand-primary);
-    text-decoration: none;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 0 20px;
-  }
-}
-
-.divio-header__meta {
-  display: flex;
-  margin: 1px 0 0;
-  padding: 0;
-  flex-direction: row;
-  align-items: center;
-
-  .divio-header__nav-anchor {
-    padding: 0;
-  }
-
-  .divio-header__nav-item + .divio-header__nav-item {
-    margin-left: 28px;
-  }
-
-  @media (max-width: 460px) {
-    display: none;
-  }
-}
-
-.divio-header__nav-button {
-  display: inline-block;
-  white-space: nowrap;
-  color: var(--color-foreground-primary);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-  transition: all 0.1s ease-in-out;
-
-  border-radius: 40px;
-  border: 1px solid var(--color-foreground-primary);
-  padding: 8px 20px !important;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: white;
-    background-color: var(--color-foreground-primary);
-  }
-}
-
-.content-icon-container {
-  position: absolute;
-  right: 40px;
-  top: 105px;
-}
-
-.theme-toggle-container {
-  position: relative;
-  top: 1px;
 }

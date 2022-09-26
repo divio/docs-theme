@@ -18,7 +18,7 @@
 }
 
 .column img {
-  border: 1px solid black;
+  border: 1px solid var(--color-foreground-primary);
 }
 
 .clearfix {
@@ -61,38 +61,31 @@
 .btn {
   cursor: pointer;
   display: inline-block;
-  color: var(--color-foreground-primary);
+  color: var(--color-background-primary);
   font-size: 18px;
   font-weight: 700;
   line-height: 1.4;
   text-align: center;
   padding: 10px 20px;
   border-radius: 3px;
-
-  border: 1px solid #1a406b;
-  background-color: #fff;
-
+  background-color: var(--color-foreground-primary);
   transition: all 0.15s ease-in-out;
 
-  &:hover {
-    color: #fff;
-    background-color: #1a406b;
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-background-primary);
+    background-color: var(--color-brand-primary);
   }
 }
 
-.btn-primary {
-  color: #fff;
-  border-color: var(--color-brand-primary);
-  background-color: var(--color-brand-primary);
+.btn + .btn {
+  margin: 5px 0;
 }
 
 .btn-small {
   font-size: 16px;
   padding: 5px 10px;
-
-  &:hover {
-    background-color: #009fd9;
-  }
 }
 
 .custon-headings {

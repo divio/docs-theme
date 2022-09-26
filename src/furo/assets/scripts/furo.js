@@ -1,8 +1,12 @@
+import Gumshoe from "./gumshoe-patched.js";
+
 ////////////////////////////////////////////////////////////////////////////////
 // Scroll Handling
 ////////////////////////////////////////////////////////////////////////////////
 var tocScroll = null;
 var header = null;
+var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+const GO_TO_TOP_OFFSET = 64;
 
 function scrollHandlerForHeader() {
   if (Math.floor(header.getBoundingClientRect().top) == 0) {
@@ -10,6 +14,19 @@ function scrollHandlerForHeader() {
   } else {
     header.classList.remove("scrolled");
   }
+}
+
+function scrollHandlerForBackToTop(positionY) {
+  if (positionY < GO_TO_TOP_OFFSET) {
+    document.documentElement.classList.remove("show-back-to-top");
+  } else {
+    if (positionY < lastScrollTop) {
+      document.documentElement.classList.add("show-back-to-top");
+    } else if (positionY > lastScrollTop) {
+      document.documentElement.classList.remove("show-back-to-top");
+    }
+  }
+  lastScrollTop = positionY;
 }
 
 function scrollHandlerForTOC(positionY) {
@@ -46,6 +63,7 @@ function scrollHandlerForTOC(positionY) {
 
 function scrollHandler(positionY) {
   scrollHandlerForHeader();
+  scrollHandlerForBackToTop(positionY);
   scrollHandlerForTOC(positionY);
 }
 
@@ -93,8 +111,8 @@ function cycleThemeOnce() {
 ////////////////////////////////////////////////////////////////////////////////
 function setupScrollHandler() {
   // Taken from https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event
-  var last_known_scroll_position = 0;
-  var ticking = false;
+  let last_known_scroll_position = 0;
+  let ticking = false;
 
   window.addEventListener("scroll", function (e) {
     last_known_scroll_position = window.scrollY;
@@ -117,10 +135,14 @@ function setupScrollSpy() {
   }
 
   // Scrollspy -- highlight table on contents, based on scroll
-  var spy = new Gumshoe(".toc-tree a", {
+  new Gumshoe(".toc-tree a", {
     reflow: true,
     recursive: true,
     navClass: "scroll-current",
+    offset: () => {
+      let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      return header.getBoundingClientRect().height + 0.5 * rem + 1;
+    },
   });
 }
 

@@ -1,4 +1,5 @@
 # npm stuff
+.nodeenv
 node_modules
 
 # Python stuff
@@ -7,8 +8,5 @@ node_modules
 /dist
 __pycache__
 
-# Generated files
-# src/*/theme/*/static/scripts
-# src/*/theme/*/static/styles
-*.css.map
-*.js.map
+# Divio stuff
+*.egg-info

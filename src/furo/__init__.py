@@ -1,22 +1,23 @@
 """A clean customisable Sphinx documentation theme."""
 
-__version__ = "2021.09.08.dev1"
+__version__ = "2022.06.21.dev1"
 
 import hashlib
 import logging
 import os
-import textwrap
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict, List, Optional, cast
+from typing import Any, Dict, Iterator, List, Optional
 
 import sphinx.application
-from bs4 import BeautifulSoup
+from docutils import nodes
 from pygments.formatters import HtmlFormatter
 from pygments.style import Style
 from pygments.token import Text
 from sphinx.builders.html import StandaloneHTMLBuilder
+from sphinx.environment.adapters.toctree import TocTree
 from sphinx.highlighting import PygmentsBridge
+from sphinx.transforms.post_transforms import SphinxPostTransform
 
 from .navigation import get_navigation_tree
 
@@ -31,35 +32,51 @@ _KNOWN_STYLES_IN_USE: Dict[str, Optional[Style]] = {
 }
 
 
-@lru_cache(maxsize=None)
-def has_not_enough_items_to_show_toc(toc: str) -> bool:
-    """Check if the toc has one or fewer items."""
-    assert toc
+class WrapTableAndMathInAContainerTransform(SphinxPostTransform):
+    """A Sphinx post-transform that wraps `table` and `div.math` in a container `div`.
 
-    soup = BeautifulSoup(toc, "html.parser")
-    return len(soup.find_all("li")) <= 1
-
-
-def wrap_elements_that_can_get_too_wide(content: str) -> str:
-    """Wrap the elements that could get too wide, with a div to allow controlling width.
-
-    - <table>
-    - [class=math]
-
+    This makes it possible to handle these overflowing the content-width, which is
+    necessary in a responsive theme.
     """
-    soup = BeautifulSoup(content, "html.parser")
 
-    for table in soup.find_all("table"):
-        table_wrapper = soup.new_tag("div", attrs={"class": "table-wrapper"})
-        table.replace_with(table_wrapper)
-        table_wrapper.append(table)
+    formats = ("html",)
+    default_priority = 500
 
-    for math in soup.find_all("div", class_="math"):
-        wrapper = soup.new_tag("div", attrs={"class": "math-wrapper"})
-        math.replace_with(wrapper)
-        wrapper.append(math)
+    def run(self, **kwargs: Any) -> None:
+        """Perform the post-transform on `self.document`."""
+        get_nodes = (
+            self.document.findall  # docutils 0.18+
+            if hasattr(self.document, "findall")
+            else self.document.traverse  # docutils <= 0.17.x
+        )
+        for node in list(get_nodes(nodes.table)):
+            new_node = nodes.container(classes=["table-wrapper"])
+            new_node.update_all_atts(node)
+            node.parent.replace(node, new_node)
+            new_node.append(node)
 
-    return str(soup)
+        for node in list(get_nodes(nodes.math_block)):
+            new_node = nodes.container(classes=["math-wrapper"])
+            new_node.update_all_atts(node)
+            node.parent.replace(node, new_node)
+            new_node.append(node)
+
+
+def has_not_enough_items_to_show_toc(
+    builder: StandaloneHTMLBuilder, docname: str
+) -> bool:
+    """Check if the toc has one or fewer items."""
+    assert builder.env
+
+    toctree = TocTree(builder.env).get_toc_for(docname, builder)
+    try:
+        self_toctree = toctree[0][1]
+    except IndexError:
+        val = True
+    else:
+        # There's only the page's own toctree in there.
+        val = len(self_toctree) == 1 and self_toctree[0].tagname == "toctree"
+    return val
 
 
 def get_pygments_style_colors(
@@ -101,9 +118,9 @@ def _compute_navigation_tree(context: Dict[str, Any]) -> str:
         toctree = context["toctree"]
         toctree_html = toctree(
             collapse=False,
-            titles_only=False,
-            maxdepth=3,
-            includehidden=False,
+            titles_only=True,
+            maxdepth=-1,
+            includehidden=True,
         )
     else:
         toctree_html = ""
@@ -111,7 +128,12 @@ def _compute_navigation_tree(context: Dict[str, Any]) -> str:
     return get_navigation_tree(toctree_html)
 
 
-def _compute_hide_toc(context: Dict[str, Any]) -> bool:
+def _compute_hide_toc(
+    context: Dict[str, Any],
+    *,
+    builder: StandaloneHTMLBuilder,
+    docname: str,
+) -> bool:
     # Should the table of contents be hidden?
     file_meta = context.get("meta", None) or {}
     if "hide-toc" in file_meta:
@@ -121,7 +143,7 @@ def _compute_hide_toc(context: Dict[str, Any]) -> bool:
     elif not context["toc"]:
         return True
 
-    return has_not_enough_items_to_show_toc(context["toc"])
+    return has_not_enough_items_to_show_toc(builder, docname)
 
 
 @lru_cache(maxsize=None)
@@ -149,7 +171,15 @@ def _html_page_context(
     if app.config.html_theme != "furo":
         return
 
+    assert isinstance(app.builder, StandaloneHTMLBuilder)
+
     if "css_files" in context:
+        if "_static/styles/furo.css" not in context["css_files"]:
+            raise Exception(
+                "This documentation is not using `furo.css` as the stylesheet. "
+                "If you have set `html_style` in your conf.py file, remove it."
+            )
+
         _add_asset_hashes(
             context["css_files"],
             ["styles/furo.css", "styles/furo-extensions.css"],
@@ -157,7 +187,7 @@ def _html_page_context(
     if "scripts" in context:
         _add_asset_hashes(
             context["scripts"],
-            ["scripts/main.js"],
+            ["scripts/furo.js"],
         )
 
     # Basic constants
@@ -165,7 +195,9 @@ def _html_page_context(
 
     # Values computed from page-level context.
     context["furo_navigation_tree"] = _compute_navigation_tree(context)
-    context["furo_hide_toc"] = _compute_hide_toc(context)
+    context["furo_hide_toc"] = _compute_hide_toc(
+        context, builder=app.builder, docname=pagename
+    )
 
     # Inject information about styles
     context["furo_pygments"] = {
@@ -185,22 +217,30 @@ def _html_page_context(
         ),
     }
 
-    # Patch the content
-    if "body" in context:
-        context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
-
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if app.config.html_theme != "furo":
         return
+    if "furo" in app.config.extensions:
+        raise Exception(
+            "Did you list 'furo' in the `extensions` in conf.py? "
+            "If so, please remove it. Furo does not work with non-HTML builders "
+            "and specifying it as an `html_theme` is sufficient."
+        )
 
-    # Our `main.js` file needs to be loaded as soon as possible.
-    app.add_js_file("scripts/main.js", priority=200)
+    if not isinstance(app.builder, StandaloneHTMLBuilder):
+        raise Exception(
+            "Furo is being used as an extension in a non-HTML build. "
+            "This should not happen."
+        )
+
+    # Our JS file needs to be loaded as soon as possible.
+    app.add_js_file("scripts/furo.js", priority=200)
 
     # 500 is the default priority for extensions, we want this after this.
     app.add_css_file("styles/furo-extensions.css", priority=600)
 
-    builder = cast(StandaloneHTMLBuilder, app.builder)
+    builder = app.builder
     assert builder, "what?"
     assert (
         builder.highlighter is not None
@@ -209,6 +249,12 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
         builder.dark_highlighter is None
     ), "this shouldn't be a dark style known to Sphinx"
     update_known_styles_state(app)
+
+    def _update_default(key: str, *, new_default: Any) -> None:
+        app.config.values[key] = (new_default, *app.config.values[key][1:])
+
+    # Change the default permalinks icon
+    _update_default("html_permalinks_icon", new_default="#")
 
 
 def update_known_styles_state(app: sphinx.application.Sphinx) -> None:
@@ -293,6 +339,14 @@ def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
     return PygmentsBridge("html", dark_style).formatter_args["style"]
 
 
+def _get_styles(formatter: HtmlFormatter, *, prefix: str) -> Iterator[str]:
+    """Get styles out of a formatter, where everything has the correct prefix."""
+    for line in formatter.get_linenos_style_defs():
+        yield f"{prefix} {line}"
+    yield from formatter.get_background_style_defs(prefix)
+    yield from formatter.get_token_style_defs(prefix)
+
+
 def get_pygments_stylesheet() -> str:
     """Generate the theme-specific pygments.css.
 
@@ -301,21 +355,23 @@ def get_pygments_stylesheet() -> str:
     light_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["light"])
     dark_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["dark"])
 
-    light = light_formatter.get_style_defs(".highlight")
-    dark_one = dark_formatter.get_style_defs('body[data-theme="dark"] .highlight')
-    dark_two = dark_formatter.get_style_defs(
-        'body:not([data-theme="light"]) .highlight'
-    )
+    lines: List[str] = []
 
-    return textwrap.dedent(
-        f"""
-            {light}
-            {dark_one}
-            @media (prefers-color-scheme: dark) {{
-                {dark_two}
-            }}
-        """
-    )
+    lines.extend(_get_styles(light_formatter, prefix=".highlight"))
+
+    lines.append("@media not print {")
+
+    dark_prefix = 'body[data-theme="dark"] .highlight'
+    lines.extend(_get_styles(dark_formatter, prefix=dark_prefix))
+
+    not_light_prefix = 'body:not([data-theme="light"]) .highlight'
+    lines.append("@media (prefers-color-scheme: dark) {")
+    lines.extend(_get_styles(dark_formatter, prefix=not_light_prefix))
+    lines.append("}")
+
+    lines.append("}")
+
+    return "\n".join(lines)
 
 
 # Yup, we overwrite the default pygments.css file, because it can't possibly respect
@@ -341,6 +397,8 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     )
 
     app.add_html_theme("furo", str(THEME_PATH))
+
+    app.add_post_transform(WrapTableAndMathInAContainerTransform)
 
     app.connect("html-page-context", _html_page_context)
     app.connect("builder-inited", _builder_inited)
