@@ -87,7 +87,6 @@ def lint(session):
 
 @nox.session
 def test(session):
-    session.install("pytest")
     session.install("-e", ".[test]")
 
     args = session.posargs or ["-n", "auto", "--cov", PACKAGE_NAME]

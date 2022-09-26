@@ -9,5 +9,4 @@ build:
   before_script:
     - pip install -U nox
   script:
-    - nox -s lint
     - nox -s docs
