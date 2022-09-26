@@ -6,7 +6,7 @@ import os
 
 import nox
 
-PACKAGE_NAME = "divio-docs"
+PACKAGE_NAME = "furo"
 nox.options.sessions = ["lint", "test"]
 
 
@@ -75,7 +75,7 @@ def docs(session):
 
 @nox.session(reuse_venv=True)
 def lint(session):
-    session.install("pre-commit")
+    # session.install("pre-commit")
 
     args = list(session.posargs)
     args.append("--all-files")
@@ -87,6 +87,7 @@ def lint(session):
 
 @nox.session
 def test(session):
+    session.install("pytest")
     session.install("-e", ".[test]")
 
     args = session.posargs or ["-n", "auto", "--cov", PACKAGE_NAME]

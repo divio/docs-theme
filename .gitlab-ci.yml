@@ -9,7 +9,5 @@ build:
   before_script:
     - pip install -U nox
   script:
-    - pwd
-    - ls -l
     - nox -s lint
     - nox -s docs
