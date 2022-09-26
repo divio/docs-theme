@@ -71,7 +71,9 @@
   background-color: var(--color-foreground-primary);
   transition: all 0.15s ease-in-out;
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     color: var(--color-background-primary);
     background-color: var(--color-brand-primary);
   }

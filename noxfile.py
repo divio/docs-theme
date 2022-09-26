@@ -72,14 +72,6 @@ def docs(session):
     # Generate documentation into `build/docs`
     session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
 
-@nox.session(name="docs-live", reuse_venv=True)
-def docs_live(session):
-    session.install("-r", "docs/requirements.txt")
-    session.install("-e", ".", "sphinx-theme-builder[cli]")
-
-    # Generate documentation into `build/docs`
-    session.run("stb", "serve", "docs/")
-
 
 @nox.session(reuse_venv=True)
 def lint(session):
@@ -157,6 +149,7 @@ def release(session):
 
     # Upload the distributions.
     session.run("twine", "upload", *glob.glob("dist/*"))
+
 
 # divio docs
 @nox.session(name="divio-docs", reuse_venv=True)

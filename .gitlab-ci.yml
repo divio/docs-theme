@@ -1,0 +1,13 @@
+include:
+  - project: divio/infra/gitlab-pipelines
+    ref: master
+    file: base/.gitlab-ci.yml
+
+build:
+  image: python:3.8-alpine
+  stage: build
+  before_script:
+    - pip install nox
+  script:
+    - nox -s lint
+    - nox -s docs
