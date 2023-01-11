@@ -45,7 +45,7 @@ $text-dark: #d2d2d2;
 
   --color-background-primary: #{$white}; // for content
   --color-background-secondary: #{$body-bg-light}; // for navigation + ToC
-  --color-background-hover: #{$black}; // for navigation-item hover
+  --color-background-hover: #{$gray-200}; // for navigation-item hover
   --color-background-hover--transparent: #{$gray-800};
   --color-background-border: #{$gray-200}; // for UI borders
   --color-background-item: #{$gray-400}; // for "background" items (eg: copybutton)

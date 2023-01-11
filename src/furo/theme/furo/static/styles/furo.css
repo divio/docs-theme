@@ -489,7 +489,7 @@ body {
   --color-foreground-border: #a2a7a8;
   --color-background-primary: #fff;
   --color-background-secondary: #f5f7f8;
-  --color-background-hover: #000;
+  --color-background-hover: #dddedf;
   --color-background-hover--transparent: #3b4446;
   --color-background-border: #dddedf;
   --color-background-item: #a2a7a8;
@@ -1386,7 +1386,7 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.
   transition: background 100ms ease-out;
 }
 .sig:not(.sig-inline):hover {
-  background: var(--color-api-background-hover);
+  background: #000;
 }
 .sig:not(.sig-inline) a.reference .viewcode-link {
   font-weight: normal;
