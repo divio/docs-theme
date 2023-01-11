@@ -489,7 +489,7 @@ body {
   --color-foreground-border: #a2a7a8;
   --color-background-primary: #fff;
   --color-background-secondary: #f5f7f8;
-  --color-background-hover: #dddedf;
+  --color-background-hover: #000;
   --color-background-hover--transparent: #3b4446;
   --color-background-border: #dddedf;
   --color-background-item: #a2a7a8;
@@ -1404,12 +1404,12 @@ em.property:first-child {
 }
 
 .sig-name {
-  color: var(--color-api-name);
+  color: #dfff67;
 }
 
 .sig-prename {
   font-weight: normal;
-  color: var(--color-api-pre-name);
+  color: #fff;
 }
 
 .sig-paren {
