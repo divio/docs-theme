@@ -2,17 +2,46 @@
 
 <!--
 
-Version codenames style: {adjective} {colorname}
+Version codenames style:
+
+date "+## %Y.%m.%d -- {adjective} {colorname}" | pbcopy
 
 https://patternbasedwriting.com/elementary_writing_success/list-4800-adjectives/
 https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.12.07 -- Reverent Raspberry
+
+- ✨ Add support for Sphinx 6.
+- ✨ Improve footnote presentation with docutils 0.18+.
+- Drop support for Sphinx 4.
+- Improve documentation about what the edit button does.
+- Improve handling of empty-flexboxes for better print experience on Chrome.
+- Improve styling for inline signatures.
+- Replace the `meta` generator tag with a comment.
+- Tweak labels with icons to prevent users selecting icons as text on touch.
+
+## 2022.09.29 -- Quaint Quartz
+
+- Add ability to set arbitrary URLs for edit button.
+- Add support for aligning text in MyST-parser generated tables.
+
+## 2022.09.15 -- Pragmatic Pistachio
+
+- Add a minimum version constraint on pygments.
+- Add an explicit dependency on `sass`.
+- Change right sidebar title from "Contents" to "On this page".
+- Correctly position sidebars on small screens.
+- Correctly select only Furo's own `svg` in related pages `nav`.
+- Make numpy-style documentation headers consistent.
+- Retitle the reference section.
+- Update npm dependencies.
+
 ## 2022.06.21 -- Opulent Opal
 
-- Fix `docutils <= 0.17.x` compatibility
-- Bump to the latest Node.js LTS
+- Fix `docutils <= 0.17.x` compatibility.
+- Bump to the latest Node.js LTS.
 
 ## 2022.06.04.1 -- Naughty Nickel bugfix
 

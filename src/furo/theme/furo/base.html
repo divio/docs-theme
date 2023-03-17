@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
 
+    <link rel="preload" href="{{ pathto('_static/3600900b3e161dbba509.woff2', 1) }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ pathto('_static/8c54504e7ac3e3c964e7.woff2', 1) }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ pathto('_static/34ba7f8bf2683405f1b1.woff2', 1) }}" as="font" type="font/woff2" crossorigin>
+
     {%- if metatags %}{{ metatags }}{% endif -%}
 
     {%- block linktags %}
@@ -28,9 +32,6 @@
           <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
         {%- endif -%}
         {#- rel="canonical" (set by html_baseurl) -#}
-        {%- if pageurl %}
-        <link rel="canonical" href="{{ pageurl|e }}" />
-        {%- endif %}
     {%- endblock linktags %}
 
     {# Favicon #}
@@ -38,8 +39,7 @@
       <link rel="shortcut icon" href="{{ favicon_url }}"/>
     {%- endif -%}
 
-    {#- Generator banner -#}
-    <meta name="generator" content="sphinx-{{ sphinx_version }}, furo {{ furo_version }}"/>
+    <!-- Generated with Sphinx {{ sphinx_version }} and Furo {{ furo_version }} -->
 
     {%- endblock site_meta -%}
 

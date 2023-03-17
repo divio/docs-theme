@@ -38,12 +38,14 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.
   > dt
     color: var(--color-api-overall)
 
-.sig
+.sig:not(.sig-inline)
   font-weight: bold
 
   font-size: var(--api-font-size)
   font-family: var(--font-stack--monospace)
 
+  margin-left: -0.25rem
+  margin-right: -0.25rem
   padding-top: 0.25rem
   padding-bottom: 0.25rem
   padding-right: 0.5rem
@@ -55,9 +57,10 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.
   border-radius: 0.25rem
 
   background: var(--color-api-background)
+  transition: background 100ms ease-out
 
   &:hover
-    background: var(--color-api-background-hover)
+    background: #{$black}
 
   // adjust the size of the [source] link on the right.
   a.reference
@@ -74,10 +77,10 @@ em.property
   &:first-child
     color: var(--color-api-keyword)
 .sig-name
-  color: var(--color-api-name)
+  color: $primary
 .sig-prename
   font-weight: normal
-  color: var(--color-api-pre-name)
+  color: $white
 .sig-paren
   color: var(--color-api-paren)
 .sig-param

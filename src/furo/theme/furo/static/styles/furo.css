@@ -373,6 +373,18 @@ template {
     border: 0.1pt solid var(--color-foreground-border);
   }
 }
+@media print {
+  ul, ol, dl, a, table, pre, blockquote {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4, h5, h6, img, figure, caption {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+  ul, ol, dl {
+    page-break-before: avoid;
+  }
+}
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -485,7 +497,7 @@ body {
   --color-announcement-text: #c9cccd;
   --color-brand-primary: #3c40f5;
   --color-brand-content: #3c40f5;
-  --color-api-background: var(--color-background-secondary);
+  --color-api-background: var(--color-background-hover--transparent);
   --color-api-background-hover: var(--color-background-hover);
   --color-api-overall: var(--color-foreground-secondary);
   --color-api-name: var(--color-problematic);
@@ -1103,6 +1115,9 @@ article {
 .mobile-header .header-right label {
     height: 100%;
     width: 100%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
   }
   :target {
     scroll-margin-top: var(--header-height);
@@ -1355,10 +1370,12 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.
   color: var(--color-api-overall);
 }
 
-.sig {
+.sig:not(.sig-inline) {
   font-weight: bold;
   font-size: var(--api-font-size);
   font-family: var(--font-stack--monospace);
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-right: 0.5rem;
@@ -1366,15 +1383,16 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.
   text-indent: -2.5em;
   border-radius: 0.25rem;
   background: var(--color-api-background);
+  transition: background 100ms ease-out;
 }
-.sig:hover {
-  background: var(--color-api-background-hover);
+.sig:not(.sig-inline):hover {
+  background: #000;
 }
-.sig a.reference .viewcode-link {
+.sig:not(.sig-inline) a.reference .viewcode-link {
   font-weight: normal;
   width: 3.5rem;
 }
-.sig span.pre {
+.sig:not(.sig-inline) span.pre {
   overflow-wrap: anywhere;
 }
 
@@ -1386,12 +1404,12 @@ em.property:first-child {
 }
 
 .sig-name {
-  color: var(--color-api-name);
+  color: #dfff67;
 }
 
 .sig-prename {
   font-weight: normal;
-  color: var(--color-api-pre-name);
+  color: #fff;
 }
 
 .sig-paren {
@@ -1444,15 +1462,20 @@ table > caption,
   margin-bottom: 0;
 }
 
-code.literal {
+code.literal, .sig-inline {
   background: var(--color-inline-code-background);
   border: 1px solid var(--color-background-border);
   border-radius: 0.2em;
   font-size: var(--font-size--small--2);
   padding: 0.1em 0.2em;
+  overflow-wrap: break-word;
 }
-p code.literal {
+p code.literal, p .sig-inline {
   border: 1px solid var(--color-background-border);
+}
+
+.sig-inline {
+  font-family: var(--font-stack--monospace);
 }
 
 div[class*=" highlight-"],
@@ -1606,7 +1629,9 @@ aside.footnote {
 
 aside.footnote > span,
 div.citation > span {
+  float: left;
   font-weight: 500;
+  padding-right: 0.25rem;
 }
 
 aside.footnote > p,
@@ -1903,6 +1928,18 @@ table.docutils th:first-child {
 table.docutils td:last-child,
 table.docutils th:last-child {
   border-right: none;
+}
+table.docutils td.text-left,
+table.docutils th.text-left {
+  text-align: left;
+}
+table.docutils td.text-right,
+table.docutils th.text-right {
+  text-align: right;
+}
+table.docutils td.text-center,
+table.docutils th.text-center {
+  text-align: center;
 }
 
 :target {
@@ -2280,6 +2317,9 @@ ul.search li {
   height: var(--sidebar-item-height);
   width: var(--sidebar-expander-width);
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;
