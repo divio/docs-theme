@@ -455,32 +455,32 @@ body {
   --icon-failure: url("data:image/svg+xml;charset=utf-8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z\"/></svg>");
   --icon-spark: url("data:image/svg+xml;charset=utf-8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M11.5 20l4.86-9.73H13V4l-5 9.73h3.5V20M12 2c2.75 0 5.1 1 7.05 2.95C21 6.9 22 9.25 22 12s-1 5.1-2.95 7.05C17.1 21 14.75 22 12 22s-5.1-1-7.05-2.95C3 17.1 2 14.75 2 12s1-5.1 2.95-7.05C6.9 3 9.25 2 12 2z\"/></svg>");
   --color-admonition-title--caution: #ff9100;
-  --color-admonition-title-background--caution: rgba(255, 145, 0, 0.1);
+  --color-admonition-title-background--caution: rgba(255, 145, 0, 0.2);
   --color-admonition-title--warning: #ff9100;
-  --color-admonition-title-background--warning: rgba(255, 145, 0, 0.1);
+  --color-admonition-title-background--warning: rgba(255, 145, 0, 0.2);
   --color-admonition-title--danger: #ff5252;
-  --color-admonition-title-background--danger: rgba(255, 82, 82, 0.1);
+  --color-admonition-title-background--danger: rgba(255, 82, 82, 0.2);
   --color-admonition-title--attention: #ff5252;
-  --color-admonition-title-background--attention: rgba(255, 82, 82, 0.1);
+  --color-admonition-title-background--attention: rgba(255, 82, 82, 0.2);
   --color-admonition-title--error: #ff5252;
-  --color-admonition-title-background--error: rgba(255, 82, 82, 0.1);
+  --color-admonition-title-background--error: rgba(255, 82, 82, 0.2);
   --color-admonition-title--hint: #00c852;
-  --color-admonition-title-background--hint: rgba(0, 200, 82, 0.1);
+  --color-admonition-title-background--hint: rgba(0, 200, 82, 0.2);
   --color-admonition-title--tip: #00c852;
-  --color-admonition-title-background--tip: rgba(0, 200, 82, 0.1);
+  --color-admonition-title-background--tip: rgba(0, 200, 82, 0.2);
   --color-admonition-title--important: #00bfa5;
-  --color-admonition-title-background--important: rgba(0, 191, 165, 0.1);
+  --color-admonition-title-background--important: rgba(0, 191, 165, 0.2);
   --color-admonition-title--note: #00b0ff;
-  --color-admonition-title-background--note: rgba(0, 176, 255, 0.1);
+  --color-admonition-title-background--note: rgba(0, 176, 255, 0.2);
   --color-admonition-title--seealso: #448aff;
-  --color-admonition-title-background--seealso: rgba(68, 138, 255, 0.1);
+  --color-admonition-title-background--seealso: rgba(68, 138, 255, 0.2);
   --color-admonition-title--admonition-todo: #808080;
-  --color-admonition-title-background--admonition-todo: rgba(128, 128, 128, 0.1);
+  --color-admonition-title-background--admonition-todo: rgba(128, 128, 128, 0.2);
   --color-admonition-title: #651fff;
-  --color-admonition-title-background: rgba(101, 31, 255, 0.1);
+  --color-admonition-title-background: rgba(101, 31, 255, 0.2);
   --icon-admonition-default: var(--icon-abstract);
   --color-topic-title: #14B8A6;
-  --color-topic-title-background: rgba(20, 184, 166, 0.1);
+  --color-topic-title-background: rgba(20, 184, 166, 0.2);
   --icon-topic-default: var(--icon-pencil);
   --color-problematic: #e20000;
   --color-foreground-primary: #000;
@@ -1118,6 +1118,11 @@ article {
     -webkit-user-select: none;
        -moz-user-select: none;
             user-select: none;
+  }
+  .nav-overlay-icon .icon,
+.theme-toggle svg {
+    height: 1.25rem;
+    width: 1.25rem;
   }
   :target {
     scroll-margin-top: var(--header-height);
