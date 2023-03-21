@@ -79,6 +79,11 @@
 
     {#- Custom front matter #}
     {%- block extrahead -%}{%- endblock -%}
+
+    {% if READTHEDOCS %}
+    <link rel="stylesheet" type="text/css" href="https://assets.readthedocs.com/css/badge_only.css" />
+    <script async="async" defer="defer" src="https://assets.readthedocs.com/javascript/readthedocs-doc-embed.js"></script>
+    {% endif %}
   </head>
   <body>
     {% include "divio/header.html" %}
