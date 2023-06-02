@@ -1,6 +1,6 @@
 """A clean customisable Sphinx documentation theme."""
 
-__version__ = "2022.12.07.dev1"
+__version__ = "2023.05.20.dev1"
 
 import hashlib
 import logging
@@ -168,10 +168,12 @@ def _html_page_context(
     context: Dict[str, Any],
     doctree: Any,
 ) -> None:
-    if app.config.html_theme != "furo":
-        return
-
-    assert isinstance(app.builder, StandaloneHTMLBuilder)
+    if not isinstance(app.builder, StandaloneHTMLBuilder):
+        raise Exception(
+            "Furo is being used with a non-HTML builder. "
+            "If you're seeing this error, it is a symptom of a mistake in your "
+            "configuration."
+        )
 
     if "css_files" in context:
         if "_static/styles/furo.css" not in context["css_files"]:
@@ -219,8 +221,6 @@ def _html_page_context(
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
-    if app.config.html_theme != "furo":
-        return
     if "furo" in app.config.extensions:
         raise Exception(
             "Did you list 'furo' in the `extensions` in conf.py? "
@@ -352,8 +352,8 @@ def get_pygments_stylesheet() -> str:
 
     There is no way to tell Sphinx how the theme handles dark mode; at this time.
     """
-    light_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["light"])
-    dark_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["dark"])
+    light_formatter = PygmentsBridge.html_formatter(style=_KNOWN_STYLES_IN_USE["light"])
+    dark_formatter = PygmentsBridge.html_formatter(style=_KNOWN_STYLES_IN_USE["dark"])
 
     lines: List[str] = []
 
