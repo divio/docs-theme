@@ -44,7 +44,7 @@
   }
 }
 
-.injected {
+body > .injected {
   // hide the rtd banner as we inject it ourselfes
   display: none !important;
 }

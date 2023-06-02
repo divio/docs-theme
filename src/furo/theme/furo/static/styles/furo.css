@@ -2737,7 +2737,7 @@ hr.docutils {
   }
 }
 
-.injected {
+body > .injected {
   display: none !important;
 }
 
