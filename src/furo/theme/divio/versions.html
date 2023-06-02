@@ -1,41 +1,41 @@
 {% if READTHEDOCS %}
 {# Add rst-badge after rst-versions for small badge style. #}
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      <span>Documentation</span>
-      <span>v: {{ current_version }}</span>
-    </span>
-    <div class="rst-other-versions">
-      <dl>
-        <dt>{{ _('Versions') }}</dt>
-        {% for slug, url in versions %}
-          <dd><a href="{{ url }}">{{ slug }}</a></dd>
-        {% endfor %}
-      </dl>
-      <dl>
-        <dt>{{ _('Downloads') }}</dt>
-        {% for type, url in downloads %}
-          <dd><a href="{{ url }}">{{ type }}</a></dd>
-        {% endfor %}
-      </dl>
-    </div>
+<div id="furo-readthedocs-versions" class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions" tabindex="0">
+  <span class="rst-current-version" data-toggle="rst-current-version" data-ol-has-click-handler="">
+    <span class="fa fa-book">&nbsp;</span>
+    <span>v: {{ current_version }}</span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>{{ _('Versions') }}</dt>
+      {% for slug, url in versions %}
+        <dd><a href="{{ url }}">{{ slug }}</a></dd>
+      {% endfor %}
+    </dl>
+    <dl>
+      <dt>{{ _('Downloads') }}</dt>
+      {% for type, url in downloads %}
+        <dd><a href="{{ url }}">{{ type }}</a></dd>
+      {% endfor %}
+    </dl>
   </div>
+</div>
 {% else %}
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      <span>Documentation</span>
-      <span>v: 1.0.0</span>
-    </span>
-    <div class="rst-other-versions">
-      <dl>
-        <dt>{{ _('Versions') }}</dt>
-        <dd><a href="#">latest</a></dd>
-        <dd><a href="#">1.0.0</a></dd>
-      </dl>
-      <dl>
-        <dt>{{ _('Downloads') }}</dt>
-        <dd><a href="#">PDF</a></dd>
-      </dl>
-    </div>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span>Documentation</span>
+    <span>v: 1.0.0</span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>{{ _('Versions') }}</dt>
+      <dd><a href="#">latest</a></dd>
+      <dd><a href="#">1.0.0</a></dd>
+    </dl>
+    <dl>
+      <dt>{{ _('Downloads') }}</dt>
+      <dd><a href="#">PDF</a></dd>
+    </dl>
   </div>
+</div>
 {% endif %}
