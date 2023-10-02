@@ -25,6 +25,10 @@
     position: relative;
     right: -1px;
     margin: 40px 0 0;
+
+    * {
+      font-family: "Helvetica Now" !important;
+    }
   }
 
   .gsc-input-box {
@@ -98,6 +102,10 @@
   padding: 0 !important;
   margin: 0 0px 0 -4px !important;
   border: none !important;
+
+  * {
+    font-family: "Helvetica Now" !important;
+  }
 
   .gsc-control-wrapper-cse {
     padding: 1em 0;
