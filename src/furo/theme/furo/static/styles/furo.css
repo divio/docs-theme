@@ -2801,6 +2801,84 @@ body > .injected {
     display: none;
   }
 }
+.sidebar-search-container {
+  font-size: 14px;
+  position: relative;
+  left: 1px;
+}
+
+.sidebar-search {
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.sidebar-drawer {
+  z-index: 4999 !important;
+}
+
+.sidebar-container .gcse-search {
+  min-height: 76px;
+}
+.sidebar-container .gsc-search-box {
+  position: relative;
+  right: -1px;
+  margin: 40px 0 0;
+}
+.sidebar-container .gsc-input-box {
+  border-right: 1px solid var(--color-background-primary);
+}
+.sidebar-container .gsc-input-box td {
+  padding: 0;
+}
+.sidebar-container .gsc-control-cse {
+  padding: 0;
+  background: none;
+  border: none;
+}
+.sidebar-container .gsc-control-wrapper-cse {
+  position: relative;
+}
+.sidebar-container .gsc-control-wrapper-cse::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: var(--sidebar-item-spacing-horizontal);
+  width: var(--sidebar-search-icon-size);
+  height: var(--sidebar-search-icon-size);
+  background-color: var(--color-sidebar-search-icon);
+  -webkit-mask-image: var(--icon-search);
+  mask-image: var(--icon-search);
+}
+.sidebar-container .gsc-search-button {
+  display: none;
+}
+.sidebar-container .gsc-input a span {
+  color: var(--color-foreground-secondary) !important;
+}
+.sidebar-container td.gsc-input {
+  padding: 0 !important;
+}
+.sidebar-container input.gsc-input {
+  font-size: 14px !important;
+  padding-top: 10px !important;
+  padding-bottom: var(--sidebar-search-input-spacing-vertical) !important;
+  padding-right: var(--sidebar-search-input-spacing-horizontal) !important;
+  padding-left: calc(var(--sidebar-item-spacing-horizontal) + var(--sidebar-search-input-spacing-horizontal) + var(--sidebar-search-icon-size)) !important;
+  background: none !important;
+}
+.sidebar-container input.gsc-input::-webkit-input-placeholder::before {
+  color: #666;
+  content: "Search";
+}
+.sidebar-container .gsc-results-wrapper-overlay {
+  border-radius: 10px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.sidebar-container .gsc-adBlock {
+  display: none !important;
+}
+
 @media only screen and (min-width: 1000px), only screen and (min-width: 500px) and (max-width: 768px) {
   .column {
     float: left;

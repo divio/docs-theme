@@ -1,0 +1,101 @@
+.sidebar-search-container {
+  font-size: 14px;
+  position: relative;
+  left: 1px;
+}
+
+.sidebar-search {
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.sidebar-drawer {
+  // needs to be < 5000 for the autocomplete dropdown
+  // which is outside of the sidebar drawer
+  z-index: 4999 !important;
+}
+
+// google search variant
+.sidebar-container {
+  .gcse-search {
+    min-height: 76px;
+  }
+
+  .gsc-search-box {
+    position: relative;
+    right: -1px;
+    margin: 40px 0 0;
+  }
+
+  .gsc-input-box {
+    border-right: 1px solid var(--color-background-primary);
+
+    td {
+      padding: 0;
+    }
+  }
+
+  .gsc-control-cse {
+    padding: 0;
+    background: none;
+    border: none;
+  }
+
+  .gsc-control-wrapper-cse {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      left: var(--sidebar-item-spacing-horizontal);
+      width: var(--sidebar-search-icon-size);
+      height: var(--sidebar-search-icon-size);
+      background-color: var(--color-sidebar-search-icon);
+      -webkit-mask-image: var(--icon-search);
+      mask-image: var(--icon-search);
+    }
+  }
+
+  .gsc-search-button {
+    display: none;
+  }
+
+  .gsc-input a span {
+    color: var(--color-foreground-secondary) !important;
+  }
+
+  td.gsc-input {
+    padding: 0 !important;
+  }
+
+  input.gsc-input {
+    font-size: 14px !important;
+    padding-top: 10px !important;
+    padding-bottom: var(--sidebar-search-input-spacing-vertical) !important;
+    padding-right: var(--sidebar-search-input-spacing-horizontal) !important;
+    padding-left: calc(
+      var(--sidebar-item-spacing-horizontal) +
+        var(--sidebar-search-input-spacing-horizontal) +
+        var(--sidebar-search-icon-size)
+    ) !important;
+    background: none !important;
+
+    &::-webkit-input-placeholder::before {
+      color: #666;
+      content: "Search";
+    }
+  }
+
+  // overlay
+  .gsc-results-wrapper-overlay {
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  // hide ads ?_? 🤣
+  .gsc-adBlock {
+    display: none !important;
+  }
+}
