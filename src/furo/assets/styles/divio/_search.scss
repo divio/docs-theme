@@ -74,6 +74,7 @@
   }
 
   input.gsc-input {
+    color: var(--color-content-foreground) !important;
     font-size: 14px !important;
     padding-top: 10px !important;
     padding-bottom: var(--sidebar-search-input-spacing-vertical) !important;
@@ -102,6 +103,7 @@
   padding: 0 !important;
   margin: 0 0px 0 -4px !important;
   border: none !important;
+  background: none !important;
 
   * {
     font-family: "Helvetica Now" !important;
@@ -109,6 +111,28 @@
 
   .gsc-control-wrapper-cse {
     padding: 1em 0;
+  }
+
+  .gsc-result {
+    border: none !important;
+    background: none !important;
+
+    * {
+      color: var(--color-content-foreground) !important;
+      line-height: 1.5;
+
+      a {
+        color: var(--color-brand-primary) !important;
+      }
+    }
+  }
+
+  .gsc-cursor-page {
+    background: none !important;
+  }
+
+  .gsc-cursor-current-page {
+    color: var(--color-brand-primary) !important;
   }
 
   // hide ads ?_? 🤣

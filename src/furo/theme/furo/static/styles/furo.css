@@ -2824,6 +2824,9 @@ body > .injected {
   right: -1px;
   margin: 40px 0 0;
 }
+.sidebar-container form.gsc-search-box * {
+  font-family: "Helvetica Now" !important;
+}
 .sidebar-container .gsc-input-box {
   border: 1px solid var(--color-background-border) !important;
   border-right: 1px solid var(--color-background-primary) !important;
@@ -2859,6 +2862,7 @@ body > .injected {
   padding: 0 !important;
 }
 .sidebar-container input.gsc-input {
+  color: var(--color-content-foreground) !important;
   font-size: 14px !important;
   padding-top: 10px !important;
   padding-bottom: var(--sidebar-search-input-spacing-vertical) !important;
@@ -2880,9 +2884,30 @@ body > .injected {
   padding: 0 !important;
   margin: 0 0px 0 -4px !important;
   border: none !important;
+  background: none !important;
+}
+.gsc-control-cse * {
+  font-family: "Helvetica Now" !important;
 }
 .gsc-control-cse .gsc-control-wrapper-cse {
   padding: 1em 0;
+}
+.gsc-control-cse .gsc-result {
+  border: none !important;
+  background: none !important;
+}
+.gsc-control-cse .gsc-result * {
+  color: var(--color-content-foreground) !important;
+  line-height: 1.5;
+}
+.gsc-control-cse .gsc-result * a {
+  color: var(--color-brand-primary) !important;
+}
+.gsc-control-cse .gsc-cursor-page {
+  background: none !important;
+}
+.gsc-control-cse .gsc-cursor-current-page {
+  color: var(--color-brand-primary) !important;
 }
 .gsc-control-cse .gsc-adBlock {
   display: none !important;
