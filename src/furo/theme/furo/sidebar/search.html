@@ -1,6 +1,6 @@
 {% if theme_google_search_id %}
 <script async src="https://cse.google.com/cse.js?cx={{ theme_google_search_id }}"></script>
-<div class="gcse-search"></div>
+<div class="gcse-searchbox"></div>
 {% else %}
 <form class="sidebar-search-container" method="get" action="{{ pathto('search') }}" role="search">
   <input class="sidebar-search" placeholder="{{ _("Search") }}" name="q" aria-label="{{ _("Search" ) }}">

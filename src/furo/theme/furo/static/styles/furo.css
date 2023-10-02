@@ -2816,29 +2816,23 @@ body > .injected {
   z-index: 4999 !important;
 }
 
-.sidebar-container .gcse-search {
+.sidebar-container .gcse-searchbox {
   min-height: 76px;
 }
-.sidebar-container .gsc-search-box {
+.sidebar-container form.gsc-search-box {
   position: relative;
   right: -1px;
   margin: 40px 0 0;
 }
 .sidebar-container .gsc-input-box {
-  border-right: 1px solid var(--color-background-primary);
+  border: 1px solid var(--color-background-border) !important;
+  border-right: 1px solid var(--color-background-primary) !important;
+  position: relative;
 }
 .sidebar-container .gsc-input-box td {
   padding: 0;
 }
-.sidebar-container .gsc-control-cse {
-  padding: 0;
-  background: none;
-  border: none;
-}
-.sidebar-container .gsc-control-wrapper-cse {
-  position: relative;
-}
-.sidebar-container .gsc-control-wrapper-cse::before {
+.sidebar-container .gsc-input-box::before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -2849,6 +2843,11 @@ body > .injected {
   background-color: var(--color-sidebar-search-icon);
   -webkit-mask-image: var(--icon-search);
   mask-image: var(--icon-search);
+}
+.sidebar-container .gsc-control-cse {
+  padding: 0;
+  background: none;
+  border: none;
 }
 .sidebar-container .gsc-search-button {
   display: none;
@@ -2865,17 +2864,27 @@ body > .injected {
   padding-bottom: var(--sidebar-search-input-spacing-vertical) !important;
   padding-right: var(--sidebar-search-input-spacing-horizontal) !important;
   padding-left: calc(var(--sidebar-item-spacing-horizontal) + var(--sidebar-search-input-spacing-horizontal) + var(--sidebar-search-icon-size)) !important;
-  background: none !important;
-}
-.sidebar-container input.gsc-input::-webkit-input-placeholder::before {
-  color: #666;
-  content: "Search";
+  background: var(--color-background-primary) !important;
+  margin: 0 !important;
 }
 .sidebar-container .gsc-results-wrapper-overlay {
   border-radius: 10px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 }
-.sidebar-container .gsc-adBlock {
+
+#___gcse_1 {
+  margin-bottom: -26px;
+}
+
+.gsc-control-cse {
+  padding: 0 !important;
+  margin: 0 0px 0 -4px !important;
+  border: none !important;
+}
+.gsc-control-cse .gsc-control-wrapper-cse {
+  padding: 1em 0;
+}
+.gsc-control-cse .gsc-adBlock {
   display: none !important;
 }
 

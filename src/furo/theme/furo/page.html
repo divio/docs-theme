@@ -88,6 +88,9 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
+        {% if theme_google_search_id %}
+        <div class="gcse-searchresults"></div>
+        {% endif %}
         <article role="main">
           {% block content %}{{ body }}{% endblock %}
         </article>
